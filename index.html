@@ -40,9 +40,9 @@
           </div>
         </div>
       </main>
-      <footer>
+      <div class="dev-footer">
         <!-- footer -->
-      </footer>
+      </div>
     </div>
   </div>
   <!-- ! Tippy - Web uses Tippy.js v2.6.0 from 2017 and vue-tippy v2.1.0 from 2019  -->
@@ -53,19 +53,19 @@
   </div>
   <!-- * Loading external files - for local dev only -->
   <script>
-    // Load content from external files -- (Target element, then source)
-    // NOTE: CG header won't be used here
-    // TODO: Implement custom header (will be shared block content)
     $("#dev-header").load("./load/template/header.html");
     $("#dev-cms-page-styles").load("./load/cms/page-styles.html");
-    $("#dev-cms-content").load("./load/cms/content.html");
-    // TODO: Ditto with footer
-    // $("footer").load("./load/template/footer.html");
+    $("#dev-cms-content").load("./load/cms/hp.html");
+    // $("#dev-cms-content").load("./load/cms/tiskovka.html");
+    $(".dev-footer").load("./load/template/footer.html");
     $("#dev-font-awesome").load("./load/template/font-awesome.html");
   </script>
 
   <!-- * Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- TEMP PLACEMENT: -->
+
 
   <script src="./storage/js/main.js" type="module"></script>
 </body>

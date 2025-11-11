@@ -109,3 +109,13 @@
 .h4, h4 {
   font-size: calc(1.875rem * var(--bs-custom-headings-scale));
 }
+
+.blockquote {
+  font-size: inherit;
+  border-inline-start: 3px solid var(--bs-primary);
+  padding-inline-start: 2rem;
+}
+.blockquote-footer {
+  margin: 1rem 0 0;
+  text-align: right;
+}
