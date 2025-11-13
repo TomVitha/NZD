@@ -7,24 +7,32 @@
 :root {
   --bs-body-font-family: "Inter";
   --bs-custom-headings-font-family: "Plus Jakarta Sans";
-  --bs-custom-headings-scale: 0.7;
+  --bs-custom-headings-scale: 0.65;
   /* * COLORS */
   --bs-primary: #fa709a;
   --bs-primary-rgb: 250, 112, 154;
+  /* todo */
+  /* --bs-primary-text-emphasis:  */
+  --bs-primary-bg-subtle: #ffe0ea;
+  --bs-primary-bg-subtle: #fff7fa;
+  /* --bs-primary-border-subtle:  */
   /* ? maybe ? */
-  --bs-secondary: #ffe0ea;
-  --bs-secondary-rgb: 255, 224, 234;
+
 
   --bs-link-color: var(--bs-primary);
   --bs-link-color-rgb: var(--bs-primary-rgb);
   /* ? maybe ? */
   --bs-link-hover-color: var(--bs-primary);
   --bs-link-hover-color-rgb: var(--bs-primary-rgb);
+
+  --bs-border-radius: 16px;
 }
 
 @media (min-width: 992px) {
   :root {
-    --bs-custom-headings-scale: 1;
+    /* TODO: REFACTOR HEADINGS VALUES */
+    /* --bs-custom-headings-scale: 1; */
+    --bs-custom-headings-scale: 0.9;
   }
 }
 
@@ -32,6 +40,7 @@
   --bs-btn-font-size: 0.875rem;
   --bs-btn-padding-x: 1rem;
   --bs-btn-padding-y: 0.6rem;
+  --bs-btn-border-radius: 0.5em;
 }
 
 /* TODO: SHADES */
@@ -51,6 +60,11 @@
   --bs-btn-disabled-bg: var(--bs-primary);
   --bs-btn-disabled-border-color: var(--bs-primary);
 }
+
+/* TODO */
+/* .btn-outline-primary {
+
+} */
 
 /* * CLASSES OVERRIDES * */
 
@@ -88,14 +102,16 @@
 /* Headings */
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   font-family: var(--bs-custom-headings-font-family);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.1;
   margin-bottom: 1rem;
+  letter-spacing: -0.015em;
 }
 
 
 .h1, h1 {
   font-size: calc(3.75rem * var(--bs-custom-headings-scale));
+  font-weight: 800;
 }
 
 .h2, h2 {
@@ -110,12 +126,96 @@
   font-size: calc(1.875rem * var(--bs-custom-headings-scale));
 }
 
+.navbar {
+  --bs-navbar-nav-link-padding-x: 1.125rem;
+  --bs-navbar-padding-y: 0.75rem;
+  --bs-navbar-toggler-border-color: transparent;
+  --bs-navbar-toggler-border-radius: 0px;
+  --bs-navbar-toggler-focus-width: 0px;
+  --bs-navbar-toggler-padding-y: 6px;
+  --bs-navbar-toggler-padding-x: 6px;
+}
+
+.navbar-toggler-icon {
+  width: 24px;
+  height: 24px;
+}
+
+
+/* WIP */
+/* * GUTTER * */
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  --bs-gutter-x: 2rem;
+}
+
+.row {
+  --bs-gutter-x: 2rem;
+}
+
+.g-1,
+.gx-1 {
+  --bs-gutter-x: 1rem;
+}
+
+.g-1,
+.gy-1 {
+  /* --bs-gutter-y: 0.25rem; */
+}
+
+/* * Same as default */
+.g-2,
+.gx-2 {
+  --bs-gutter-x: 2rem;
+}
+
+.g-2,
+.gy-2 {
+  /* --bs-gutter-y: 0.5rem; */
+}
+
+.g-3,
+.gx-3 {
+  --bs-gutter-x: 3rem;
+}
+
+.g-3,
+.gy-3 {
+  /* --bs-gutter-y: 1rem; */
+}
+
+.g-4,
+.gx-4 {
+  --bs-gutter-x: 4rem;
+}
+
+.g-4,
+.gy-4 {
+  /* --bs-gutter-y: 1.5rem; */
+}
+
+.g-5,
+.gx-5 {
+  --bs-gutter-x: 5rem;
+}
+
+.g-5,
+.gy-5 {
+  /* --bs-gutter-y: 4rem; */
+}
+
 .blockquote {
   font-size: inherit;
   border-inline-start: 3px solid var(--bs-primary);
   padding-inline-start: 2rem;
 }
+
 .blockquote-footer {
   margin: 1rem 0 0;
   text-align: right;
+}
+
+.badge {
+  --bs-badge-font-weight: 400;
+  --bs-badge-font-size: 70%;
+  vertical-align: middle;
 }

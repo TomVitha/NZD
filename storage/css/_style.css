@@ -5,7 +5,7 @@ img {
 }
 
 /* todo - possibly update v-data value */
-div[data-v-5782d946] {
+div:has(>#main) {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -16,12 +16,46 @@ main#main {
   flex: 1;
 }
 
+/* WIP */
+header {
+  box-shadow: inset 0px -1px 0px 0px #f2f2f2;
+  z-index: 1;
+  background-color: white;
+  top: 0;
+  width: 100%;
+}
 
+header.transparent {
+  background: transparent;
+  box-shadow: none;
+}
 
-/* CUSTOM CLASSES */
+header.sticky {
+  position: sticky;
+}
+
+header.fixed {
+  position: fixed;
+}
+
+header.absolute {
+  position: absolute;
+}
 
 section {
-  margin-block: 3rem;
+  margin-block: 3.5rem;
+  overflow-x: clip;
+}
+
+/* ? maybe ? */
+section:first-of-type {
+  margin-top: 3rem;
+  /* background-color: red; */
+}
+
+section[class*="bg-"] {
+  margin-block: 0;
+  padding-block: 3rem;
 }
 
 section section {
@@ -38,13 +72,9 @@ section section {
   }
 }
 
-/* header {
-  min-height: 74px;
-} */
-
 
 .hero {
-  --hero-img: url('/img/hero-img.jpg');
+  --hero-img: url('../img/hero-img.jpg');
   min-height: 500px;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.35), transparent 16%, transparent 46%, white),
@@ -56,7 +86,7 @@ section section {
   background-position: 75% 20%;
 }
 
-@media (min-width: 578px) {
+@media (min-width: 576px) {
   .hero {
     min-height: 700px;
   }

@@ -53,13 +53,17 @@
   </div>
   <!-- * Loading external files - for local dev only -->
   <script>
-    $("#dev-header").load("./load/template/header.html");
+    $("#dev-header").load("./load/cms/header.html");
     $("#dev-cms-page-styles").load("./load/cms/page-styles.html");
-    $("#dev-cms-content").load("./load/cms/hp.html");
-    // $("#dev-cms-content").load("./load/cms/tiskovka.html");
-    $(".dev-footer").load("./load/template/footer.html");
+    // $("#dev-cms-content").load("./load/cms/pages/home.html");
+    // $("#dev-cms-content").load("./load/cms/pages/tiskovka.html");
+    // $("#dev-cms-content").load("./load/cms/pages/podporte.html");
+    $(".dev-footer").load("./load/cms/footer.html");
     $("#dev-font-awesome").load("./load/template/font-awesome.html");
   </script>
+  <!-- * DEV SPA -->
+  <script src="js/hash-router.js"></script>
+  <!-- <script src="js/url-router.js"></script> -->
 
   <!-- * Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
