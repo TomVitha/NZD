@@ -1,3 +1,6 @@
+const pageTitlePrefix = ''
+const pageTitleSuffix = ' - Nadační fond zdraví dětí'
+
 const routes = {
     404: {
         template: "/load/cms/pages/404.html",
@@ -9,6 +12,16 @@ const routes = {
         title: "Home",
         description: "",
     },
+    pomahame: {
+        template: "/load/cms/pages/pomahame.html",
+        title: "Jak pomáháme",
+        description: "",
+    },
+    akce: {
+        template: "/load/cms/pages/akce.html",
+        title: "Akce",
+        description: "",
+    },
     podporte: {
         template: "/load/cms/pages/podporte.html",
         title: "Podpořte",
@@ -16,7 +29,7 @@ const routes = {
     },
     tiskovka: {
         template: "/load/cms/pages/tiskovka.html",
-        title: "Podpořte",
+        title: "Vzor tiskovky",
         description: "",
     },
     kontakty: {
@@ -27,7 +40,7 @@ const routes = {
 };
 
 
-// create a function that watches the url and calls the urlLocationHandler
+// Function that watches the url and calls the urlLocationHandler
 const hashRouterHandler = async (hashChangeEvent) => {
     // Debug logs
     // console.debug("Event: ", hashChangeEvent);
@@ -53,19 +66,19 @@ const hashRouterHandler = async (hashChangeEvent) => {
 async function navigate(location) {
     // Validation
     if (!location) {
-        console.error("Navigator error: No location name provided.")
+        console.error("Navigator Error: No location name provided.")
         return
     }
 
     let route = routes[location];
     if (!route) {
-        console.error(`Navigator error: Location "${location}" doesn't exist.`)
+        console.error(`Navigator Error: Location "${location}" doesn't exist.`)
         console.log('Redirecting to 404...')
         route = routes["404"]
     }
     const pageHTML = await fetch(route.template).then((response) => response.text());						// get the html from the template
     document.querySelector("#dev-cms-content").innerHTML = pageHTML;											// set the content of the content div to the html
-    document.title = `${route.title}`;							// set the title of the document to the title of the route
+    document.title = `${pageTitlePrefix}${route.title}${pageTitleSuffix}`;							// set the title of the document to the title of the route
     document.querySelector('meta[name="description"]')?.setAttribute("content", route.description);		// set the description of the document to the description of the route
     // updateNavbarActiveLink(location)					                                                // update the active link in the navbar
 }

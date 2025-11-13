@@ -44,6 +44,8 @@ header.absolute {
 
 section {
   margin-block: 3.5rem;
+  scroll-margin-top: 3.5rem;
+  overflow-x: hidden;
   overflow-x: clip;
 }
 

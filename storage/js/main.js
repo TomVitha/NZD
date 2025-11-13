@@ -10,18 +10,21 @@ document.body.addEventListener('click', function (event) {
   const emptyLink = event.target.closest('a:not([href]), a[href=""], a[href^="#"]:not([href^="#page/"])')
   if (emptyLink) {
     event?.preventDefault();
-    console.debug(`Page reload avoided. Prevented default on empty link: `, emptyLink)
+    console.debug(`Page reload avoided by preventing default on empty link:`, emptyLink)
   }
 
   // WIP: Anchor navigation fix
   const anchorLink = event.target.closest('a[href^="#"]:not([href="#"]):not([href^="#page/"])')
   if (anchorLink) {
     event?.preventDefault();
+    const targetElement = document.querySelector(anchorLink.getAttribute("href"));
     // TEMP DISABLED (to avoid conflict with hash-router)
     // TODO: ENABLE FOR PROD
     // history.replaceState({}, "", anchorLink.getAttribute("href"))      // Replaces current history entry
-    anchorLink.scrollIntoView();
-    console.debug(`Scrolled to element after clicking on anchor link: `, anchorLink)
+    if (targetElement) {
+      targetElement.scrollIntoView();
+      console.debug(`Scrolled to element after clicking on anchor link:`, anchorLink)
+    }
   };
 });
 
