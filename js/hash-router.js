@@ -37,6 +37,11 @@ const routes = {
         title: "Kontakty",
         description: "",
     },
+    downloads: {
+        template: "/load/cms/pages/downloads.html",
+        title: "Ke stažení",
+        description: "",
+    },
 };
 
 

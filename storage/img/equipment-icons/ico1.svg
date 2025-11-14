@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 150 150">
+  <defs>
+    <style>
+      .cls-2 {
+        fill: none;
+        stroke: var(--bs-primary-rgb, #fa709a);
+        stroke-miterlimit: 10;
+        stroke-width: 2.5px;
+        stroke-linecap: round;
+        stroke-miterlimit: 0;
+      }
+    </style>
+  </defs>
+  <g id="Vrstva_1" data-name="Vrstva 1">
+    <g>
+      <rect class="cls-2" x="38.13" y="38.13" width="73.75" height="73.75"/>
+      <rect class="cls-2" x="43.59" y="43.59" width="62.82" height="49.16"/>
+      <circle class="cls-2" cx="53.15" cy="102.31" r="4.1"/>
+      <circle class="cls-2" cx="98.22" cy="85.93" r="2.73"/>
+      <circle class="cls-2" cx="65.44" cy="103.68" r="2.73"/>
+      <circle class="cls-2" cx="76.37" cy="103.68" r="2.73"/>
+      <line class="cls-2" x1="106.41" y1="79.1" x2="43.59" y2="79.1"/>
+      <line class="cls-2" x1="49.05" y1="83.19" x2="51.78" y2="83.19"/>
+      <line class="cls-2" x1="57.25" y1="83.19" x2="59.98" y2="83.19"/>
+      <line class="cls-2" x1="65.44" y1="83.19" x2="68.17" y2="83.19"/>
+      <line class="cls-2" x1="73.63" y1="83.19" x2="76.37" y2="83.19"/>
+      <line class="cls-2" x1="81.83" y1="83.19" x2="84.56" y2="83.19"/>
+      <line class="cls-2" x1="49.05" y1="88.66" x2="51.78" y2="88.66"/>
+      <line class="cls-2" x1="57.25" y1="88.66" x2="59.98" y2="88.66"/>
+      <line class="cls-2" x1="65.44" y1="88.66" x2="68.17" y2="88.66"/>
+      <line class="cls-2" x1="73.63" y1="88.66" x2="76.37" y2="88.66"/>
+      <line class="cls-2" x1="81.83" y1="88.66" x2="84.56" y2="88.66"/>
+      <polyline class="cls-2" points="49.05 54.52 59.98 54.52 62.71 49.05 65.44 54.52 72.27 54.52 75 59.98 77.73 54.52 84.56 54.52 87.29 49.05 90.02 54.52 100.95 54.52"/>
+      <polyline class="cls-2" points="49.05 68.17 59.98 68.17 62.71 62.71 65.44 68.17 72.27 68.17 75 73.63 77.73 68.17 84.56 68.17 87.29 59.98 90.02 68.17 100.95 68.17"/>
+    </g>
+  </g>
+
+</svg>

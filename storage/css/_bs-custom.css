@@ -98,6 +98,18 @@
   max-width: 1320px !important;
 }
 
+a {
+  text-decoration: none;
+}
+a:where(:hover) {
+  text-decoration: underline;
+}
+
+/* ? maybe ? */
+p {
+  margin-bottom: 1.5rem;
+}
+
 
 /* Headings */
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
@@ -109,13 +121,13 @@
 }
 
 
-.h1, h1 {
+/* .h1, h1 {
   font-size: calc(3.75rem * var(--bs-custom-headings-scale));
   font-weight: 800;
 }
 
 .h2, h2 {
-  font-size: calc(3.125rem * var(--bs-custom-headings-scale));
+  font-size: calc(3.0rem * var(--bs-custom-headings-scale));
 }
 
 .h3, h3 {
@@ -126,6 +138,49 @@
   font-size: calc(1.875rem * var(--bs-custom-headings-scale));
 }
 
+.h5, h5 {
+  font-size: calc(1.5rem * var(--bs-custom-headings-scale));
+} */
+
+/* TESTING */
+h1, h2, h3, h4, h5, h6 {
+  --temp-headings-slope: 1.2;
+  /* ? maybe ? */
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: calc(1rem * pow(var(--temp-headings-slope), 5));
+  font-weight: 800;
+}
+
+h2 {
+  font-size: calc(1rem * pow(var(--temp-headings-slope), 4));
+  font-weight: 750;
+}
+
+h3 {
+  font-size: calc(1rem * pow(var(--temp-headings-slope), 3));
+}
+
+h4 {
+  font-size: calc(1rem * pow(var(--temp-headings-slope), 2));
+}
+
+h5 {
+  font-size: calc(1rem * pow(var(--temp-headings-slope), 1));
+}
+
+h6 {
+  font-size: calc(1rem * pow(var(--temp-headings-slope), 0));
+}
+
+@media (min-width: 992px) {
+  h1, h2, h3, h4, h5, h6 {
+    --temp-headings-slope: 1.27;
+  }
+}
+
 .navbar {
   --bs-navbar-nav-link-padding-x: 1.125rem;
   --bs-navbar-padding-y: 0.75rem;
@@ -134,6 +189,7 @@
   --bs-navbar-toggler-focus-width: 0px;
   --bs-navbar-toggler-padding-y: 6px;
   --bs-navbar-toggler-padding-x: 6px;
+  --bs-navbar-hover-color: var(--bs-primary);
 }
 
 .navbar-toggler-icon {

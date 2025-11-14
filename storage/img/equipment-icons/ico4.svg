@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 150 150">
+  <defs>
+    <style>
+      .cls-2 {
+        fill: none;
+        stroke: var(--bs-primary-rgb, #fa709a);
+        stroke-miterlimit: 10;
+        stroke-width: 2.5px;
+        stroke-linecap: round;
+        stroke-miterlimit: 0;
+      }
+    </style>
+  </defs>
+  <g id="Vrstva_1" data-name="Vrstva 1">
+    <g>
+      <rect class="cls-2" x="22.91" y="56.13" width="104.17" height="10.84" rx="3.2" ry="3.2"/>
+      <path class="cls-2" d="m115.21,67.13v4.98c0,1.32-1.43,2.4-3.2,2.4H37.99c-1.77,0-3.2-1.07-3.2-2.4v-4.98"/>
+      <g>
+        <line class="cls-2" x1="89.5" y1="74.63" x2="58.1" y2="89.44"/>
+        <line class="cls-2" x1="58.1" y1="74.63" x2="89.5" y2="89.44"/>
+        <polyline class="cls-2" points="41.94 95.56 41.94 89.44 108.06 89.44 108.06 95.56"/>
+        <path class="cls-2" d="m45.05,98.72c0,1.72-1.39,3.11-3.11,3.11s-3.11-1.39-3.11-3.11,1.39-3.11,3.11-3.11,3.11,1.39,3.11,3.11Z"/>
+        <path class="cls-2" d="m111.17,98.72c0,1.72-1.39,3.11-3.11,3.11s-3.11-1.39-3.11-3.11,1.39-3.11,3.11-3.11,3.11,1.39,3.11,3.11Z"/>
+      </g>
+      <path class="cls-2" d="m51.7,55.9c0-4.27-3.46-7.73-7.73-7.73h-5.11c-4.27,0-7.73,3.46-7.73,7.73"/>
+    </g>
+  </g>
+
+</svg>

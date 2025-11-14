@@ -121,3 +121,25 @@ figcaption {
   font-size: 0.875rem;
   color: var(--bs-secondary-color)
 }
+
+
+.temp-hero {
+  --hero-img: url('../img/couveuse-bebe-premature.webp');
+  /* height: 500px; */
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.35), transparent 16%, transparent 46%, white),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.35), transparent 20%, transparent 85%, white),
+    linear-gradient(#ffffffe1, #ffffffbf),
+    var(--hero-img);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  
+  padding-block: 4rem;
+}
+
+@media (min-width: 576px) {
+  .temp-hero {
+  padding-block: 7rem;
+  }
+}

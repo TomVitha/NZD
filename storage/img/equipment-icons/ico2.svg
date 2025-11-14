@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 150 150">
+  <defs>
+    <style>
+      .cls-2 {
+        fill: none;
+        stroke: var(--bs-primary-rgb, #fa709a);
+        stroke-miterlimit: 10;
+        stroke-width: 2.5px;
+        stroke-linecap: round;
+        stroke-miterlimit: 0;
+      }
+    </style>
+  </defs>
+  <g id="Vrstva_1" data-name="Vrstva 1">
+    <g>
+      <path class="cls-2" d="m75.73,116.38l35.68-35.68c4.86-4.86,7.38-11.34,7.38-17.77,0-13.53-10.95-23.65-23.74-23.65-8.62,0-15.37,4.45-19.32,9.84h-1.23c-3.17-4.31-9.51-9.82-19.32-9.82-13.46,0-23.96,10.86-23.96,23.91,0,6.13,2.34,12.25,7.01,16.93l36.24,36.24h1.26Z"/>
+      <g>
+        <polyline class="cls-2" points="55.23 73.4 63.7 73.4 68.43 64.93 69.35 64.93 79.55 81.88 80.65 81.88 86.3 73.4 94.77 73.4"/>
+        <line class="cls-2" x1="97.6" y1="73.4" x2="100.42" y2="73.4"/>
+        <line class="cls-2" x1="52.4" y1="73.4" x2="49.58" y2="73.4"/>
+      </g>
+    </g>
+  </g>
+
+</svg>
