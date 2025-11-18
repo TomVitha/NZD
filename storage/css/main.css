@@ -8,12 +8,12 @@
 /* @import url('https://cdn.jsdelivr.net/npm/@tabler/core@1.4.0/dist/css/tabler.min.css');  */
 
 /* INTERNAL */
-@import url('_bs-custom.css');
+@import url('bs-custom.css');
 /* @import url('_tblr-custom.css'); */
-@import url('_fonts.css');
+@import url('fonts.css');
 /* ? reset / normalize ? - if needed */
 
-@import url('_style.css');
+@import url('style.css');
 
 /* ? Use @layers? We can @import into @layer, like: */
 /* @import "theme.css" layer(utilities); */

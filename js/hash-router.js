@@ -3,42 +3,42 @@ const pageTitleSuffix = ' - Nadační fond zdraví dětí'
 
 const routes = {
     404: {
-        template: "/load/cms/pages/404.html",
+        template: "./load/cms/pages/404.html",
         title: "404",
         description: "",
     },
     home: {
-        template: "/load/cms/pages/home.html",
+        template: "./load/cms/pages/home.html",
         title: "Home",
         description: "",
     },
     pomahame: {
-        template: "/load/cms/pages/pomahame.html",
+        template: "./load/cms/pages/pomahame.html",
         title: "Jak pomáháme",
         description: "",
     },
     akce: {
-        template: "/load/cms/pages/akce.html",
+        template: "./load/cms/pages/akce.html",
         title: "Charitativní akce",
         description: "",
     },
     podporte: {
-        template: "/load/cms/pages/podporte.html",
+        template: "./load/cms/pages/podporte.html",
         title: "Podpořte",
         description: "",
     },
     tiskovka: {
-        template: "/load/cms/pages/tiskovka.html",
+        template: "./load/cms/pages/tiskovka.html",
         title: "Vzor tiskovky",
         description: "",
     },
     kontakty: {
-        template: "/load/cms/pages/kontakty.html",
+        template: "./load/cms/pages/kontakty.html",
         title: "Kontakty",
         description: "",
     },
     downloads: {
-        template: "/load/cms/pages/downloads.html",
+        template: "./load/cms/pages/downloads.html",
         title: "Ke stažení",
         description: "",
     },
