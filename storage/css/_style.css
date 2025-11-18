@@ -23,9 +23,10 @@ header {
   background-color: white;
   top: 0;
   width: 100%;
+  transition: background-color 150ms;
 }
 
-header.transparent {
+header.transparent:has(.navbar-collapse.collapse:not(.show)) {
   background: transparent;
   box-shadow: none;
 }
@@ -79,7 +80,7 @@ section section {
   --hero-img: url('../img/hero-img.jpg');
   min-height: 500px;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.35), transparent 16%, transparent 46%, white),
+    linear-gradient(rgba(255, 255, 255, 0.6), transparent 20%, transparent 46%, white),
     linear-gradient(90deg, rgba(255, 255, 255, 0.35), transparent 20%, transparent 85%, white),
     linear-gradient(#ffffffbf, #ffffffbf),
     var(--hero-img);

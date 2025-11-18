@@ -5,6 +5,23 @@ document.querySelectorAll('link:is([href*="app."], [href*="chunk-vendors"], [hre
 })
 
 
+// WIP
+document.addEventListener("scroll", headerBgChanger, { passive: true });
+
+function headerBgChanger() {
+  if (window.scrollY > 50) {
+    document.querySelector(".head header")?.classList.remove("transparent");
+  } else {
+    document.querySelector(".head header")?.classList.add("transparent");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  console.log("DOM fully loaded and parsed");
+  headerBgChanger();
+});
+
+
 document.body.addEventListener('click', function (event) {
   // WIP: Page reload fix
   const emptyLink = event.target.closest('a:not([href]), a[href=""], a[href^="#"]:not([href^="#page/"])')
@@ -19,7 +36,7 @@ document.body.addEventListener('click', function (event) {
     event?.preventDefault();
     const targetElement = document.querySelector(anchorLink.getAttribute("href"));
     // TEMP DISABLED (to avoid conflict with hash-router)
-    // TODO: ENABLE FOR PROD
+    // TODO: --> ENABLE FOR PROD
     // history.replaceState({}, "", anchorLink.getAttribute("href"))      // Replaces current history entry
     if (targetElement) {
       targetElement.scrollIntoView();

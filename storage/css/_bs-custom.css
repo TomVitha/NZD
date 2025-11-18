@@ -161,7 +161,7 @@ p {
 
 .navbar {
   --bs-navbar-nav-link-padding-x: 1.125rem;
-  --bs-navbar-padding-y: 0.75rem;
+  --bs-navbar-padding-y: 1rem;
   --bs-navbar-toggler-border-color: transparent;
   --bs-navbar-toggler-border-radius: 0px;
   --bs-navbar-toggler-focus-width: 0px;

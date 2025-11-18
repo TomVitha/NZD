@@ -19,7 +19,7 @@ const routes = {
     },
     akce: {
         template: "/load/cms/pages/akce.html",
-        title: "Akce",
+        title: "Charitativní akce",
         description: "",
     },
     podporte: {
