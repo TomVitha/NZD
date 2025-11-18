@@ -85,6 +85,7 @@ async function navigate(location) {
     document.querySelector("#dev-cms-content").innerHTML = pageHTML;											// set the content of the content div to the html
     document.title = `${pageTitlePrefix}${route.title}${pageTitleSuffix}`;							// set the title of the document to the title of the route
     document.querySelector('meta[name="description"]')?.setAttribute("content", route.description);		// set the description of the document to the description of the route
+    // Jump to the top of the page
     window.scrollTo({
         top: 0,
         left: 0,

@@ -19,22 +19,47 @@ document.addEventListener("click", (event) => {
 });
 
 // create an object that maps the url to the template, title, and description
-const urlRoutes = {
-    home: {
-        template: "/load/cms/pages/home.html",
-        title: "Home",
-        description: "",
-    },
-    podporte: {
-        template: "/load/cms/pages/podporte.html",
-        title: "Podpořte",
-        description: "",
-    },
-    tiskovka: {
-        template: "/load/cms/pages/tiskovka.html",
-        title: "Podpořte",
-        description: "",
-    },
+const routes = {
+	404: {
+		template: "./load/cms/pages/404.html",
+		title: "404",
+		description: "",
+	},
+	home: {
+		template: "./load/cms/pages/home.html",
+		title: "Home",
+		description: "",
+	},
+	pomahame: {
+		template: "./load/cms/pages/pomahame.html",
+		title: "Jak pomáháme",
+		description: "",
+	},
+	akce: {
+		template: "./load/cms/pages/akce.html",
+		title: "Charitativní akce",
+		description: "",
+	},
+	podporte: {
+		template: "./load/cms/pages/podporte.html",
+		title: "Podpořte",
+		description: "",
+	},
+	tiskovka: {
+		template: "./load/cms/pages/tiskovka.html",
+		title: "Vzor tiskovky",
+		description: "",
+	},
+	kontakty: {
+		template: "./load/cms/pages/kontakty.html",
+		title: "Kontakty",
+		description: "",
+	},
+	downloads: {
+		template: "./load/cms/pages/downloads.html",
+		title: "Ke stažení",
+		description: "",
+	},
 };
 
 // create a function that watches the url and calls the urlLocationHandler
@@ -54,12 +79,18 @@ async function urlLocationHandler() {
 		location = "home";
 	}
 
-	const route = urlRoutes[location] || urlRoutes["404"];											// get the route object from the urlRoutes object
+	const route = routes[location] || routes["404"];											// get the route object from the urlRoutes object
 	console.warn("!route: ", route)
 	const html = await fetch(route.template).then((response) => response.text());					// get the html from the template
 	document.querySelector("#dev-cms-content").innerHTML = html;										// set the content of the content div to the html
 	document.title = `${pageTitlePrefix} ${route.title} - ${pageTitleSuffix}`;						// set the title of the document to the title of the route
 	document.querySelector('meta[name="description"]')?.setAttribute("content", route.description);	// set the description of the document to the description of the route
+	// Jump to the top of the page
+	window.scrollTo({
+		top: 0,
+		left: 0,
+		behavior: "instant"
+	})
 };
 
 // add an event listener to the window that watches for url changes
