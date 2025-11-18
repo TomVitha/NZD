@@ -7,7 +7,6 @@
 :root {
   --bs-body-font-family: "Inter";
   --bs-custom-headings-font-family: "Plus Jakarta Sans";
-  --bs-custom-headings-scale: 0.65;
   /* * COLORS */
   --bs-primary: #fa709a;
   --bs-primary-rgb: 250, 112, 154;
@@ -16,9 +15,6 @@
   --bs-primary-bg-subtle: #ffe0ea;
   --bs-primary-bg-subtle: #fff7fa;
   /* --bs-primary-border-subtle:  */
-  /* ? maybe ? */
-
-
   --bs-link-color: var(--bs-primary);
   --bs-link-color-rgb: var(--bs-primary-rgb);
   /* ? maybe ? */
@@ -28,14 +24,6 @@
   --bs-border-radius: 16px;
 }
 
-@media (min-width: 992px) {
-  :root {
-    /* TODO: REFACTOR HEADINGS VALUES */
-    /* --bs-custom-headings-scale: 1; */
-    --bs-custom-headings-scale: 0.9;
-  }
-}
-
 .btn {
   --bs-btn-font-size: 0.875rem;
   --bs-btn-padding-x: 1rem;
@@ -43,38 +31,52 @@
   --bs-btn-border-radius: 0.5em;
 }
 
-/* TODO: SHADES */
-.btn-primary {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: var(--bs-primary);
-  --bs-btn-border-color: var(--bs-primary);
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #0b5ed7;
-  --bs-btn-hover-border-color: #0a58ca;
-  --bs-btn-focus-shadow-rgb: 49, 132, 253;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #0a58ca;
-  --bs-btn-active-border-color: #0a53be;
+/* WIP */
+/* All shades */
+.btn-primary,
+.btn-outline-primary,
+.btn-secondary {
+  --bs-btn-bg: var(--bs-custom-btn-theme-primary);
+  --bs-btn-color: var(--bs-custom-btn-theme-secondary);
+  --bs-btn-border-color: var(--bs-custom-btn-theme-primary);
+  --bs-btn-hover-color: var(--bs-custom-btn-theme-secondary);
+  --bs-btn-hover-bg: color-mix(in srgb, var(--bs-custom-btn-theme-primary), black 10%);
+  --bs-btn-hover-border-color: var(--bs-btn-hover-bg);
+  --bs-btn-focus-shadow-rgb: 0, 0, 0;
+  --bs-btn-active-color: var(--bs-custom-btn-theme-secondary);
+  --bs-btn-active-bg: color-mix(in srgb, var(--bs-custom-btn-theme-primary), black 15%);
+  --bs-btn-active-border-color: var(--bs-btn-active-bg);
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: var(--bs-primary);
-  --bs-btn-disabled-border-color: var(--bs-primary);
+  --bs-btn-disabled-color: var(--bs-custom-btn-theme-secondary);
+  --bs-btn-disabled-bg: var(--bs-custom-btn-theme-primary);
+  --bs-btn-disabled-border-color: var(--bs-custom-btn-theme-primary);
 }
 
-/* TODO */
-/* .btn-outline-primary {
+/* Outline shades */
+.btn-outline-primary {
+  --bs-btn-bg: transparent;
+  --bs-btn-color: var(--bs-custom-btn-theme-primary);
+  --bs-btn-hover-bg: var(--bs-custom-btn-theme-primary);
+  --bs-btn-hover-border-color: var(--bs-custom-btn-theme-primary);
+  --bs-btn-active-bg: var(--bs-custom-btn-theme-primary);
+  --bs-btn-active-border-color: var(--bs-custom-btn-theme-primary);
+  --bs-btn-disabled-color: var(--bs-custom-btn-theme-primary);
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: var(--bs-custom-btn-theme-primary);
+  --bs-gradient: none;
+}
 
-} */
+.btn-primary,
+.btn-outline-primary {
+  --bs-custom-btn-theme-primary: var(--bs-primary);
+  --bs-custom-btn-theme-secondary: #fff;
+}
+
 
 /* * CLASSES OVERRIDES * */
 
 /* Container */
-.container,
-.container-sm,
-.container-md,
-.container-lg,
-.container-xl,
-.container-xxl {
+[class*="container"] {
   height: 100%;
 }
 
@@ -101,6 +103,7 @@
 a {
   text-decoration: none;
 }
+
 a:where(:hover) {
   text-decoration: underline;
 }
@@ -118,65 +121,40 @@ p {
   line-height: 1.1;
   margin-bottom: 1rem;
   letter-spacing: -0.015em;
-}
-
-
-/* .h1, h1 {
-  font-size: calc(3.75rem * var(--bs-custom-headings-scale));
-  font-weight: 800;
-}
-
-.h2, h2 {
-  font-size: calc(3.0rem * var(--bs-custom-headings-scale));
-}
-
-.h3, h3 {
-  font-size: calc(2.375rem * var(--bs-custom-headings-scale));
-}
-
-.h4, h4 {
-  font-size: calc(1.875rem * var(--bs-custom-headings-scale));
-}
-
-.h5, h5 {
-  font-size: calc(1.5rem * var(--bs-custom-headings-scale));
-} */
-
-/* TESTING */
-h1, h2, h3, h4, h5, h6 {
-  --temp-headings-slope: 1.2;
-  /* ? maybe ? */
   margin-bottom: 0.5em;
+  /* WIP */
+  --temp-headings-slope: 1.185;
 }
 
-h1 {
+.h1, h1 {
   font-size: calc(1rem * pow(var(--temp-headings-slope), 5));
   font-weight: 800;
 }
 
-h2 {
+.h2, h2 {
   font-size: calc(1rem * pow(var(--temp-headings-slope), 4));
   font-weight: 750;
 }
 
-h3 {
+.h3, h3 {
   font-size: calc(1rem * pow(var(--temp-headings-slope), 3));
 }
 
-h4 {
+.h4, h4 {
   font-size: calc(1rem * pow(var(--temp-headings-slope), 2));
 }
 
-h5 {
+.h5, h5 {
   font-size: calc(1rem * pow(var(--temp-headings-slope), 1));
 }
 
-h6 {
+.h6, h6 {
   font-size: calc(1rem * pow(var(--temp-headings-slope), 0));
 }
 
+/* Desktop */
 @media (min-width: 992px) {
-  h1, h2, h3, h4, h5, h6 {
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     --temp-headings-slope: 1.27;
   }
 }
