@@ -23,7 +23,9 @@ header {
   background-color: white;
   top: 0;
   width: 100%;
-  transition: background-color 150ms;
+  transition-property: background-colors, padding;
+  transition-duration: 150ms;
+  
 }
 
 header.transparent:has(.navbar-collapse.collapse:not(.show)) {
@@ -45,7 +47,7 @@ header.absolute {
 
 section {
   margin-block: 3.5rem;
-  scroll-margin-top: 3.5rem;
+  scroll-margin-top: 8.5rem;
   overflow-x: hidden;
   overflow-x: clip;
 }
