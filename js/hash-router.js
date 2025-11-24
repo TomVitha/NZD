@@ -1,6 +1,9 @@
 const pageTitlePrefix = ''
 const pageTitleSuffix = ' - Nadační fond zdraví dětí'
 
+// Track scripts added by page navigation for cleanup
+let pageScripts = []
+
 const routes = {
     404: {
         template: "./load/cms/pages/404.html",
@@ -14,12 +17,12 @@ const routes = {
     },
     pomahame: {
         template: "./load/cms/pages/pomahame.html",
-        title: "Jak pomáháme",
+        title: "Pomáháme",
         description: "",
     },
-    akce: {
-        template: "./load/cms/pages/akce.html",
-        title: "Charitativní akce",
+    news: {
+        template: "./load/cms/pages/news.html",
+        title: "Aktuality",
         description: "",
     },
     podporte: {
@@ -68,6 +71,49 @@ const hashRouterHandler = async (hashChangeEvent) => {
     navigate(location);    // "navigate" to route (load the template html)
 };
 
+// Clean up scripts from previous page
+function cleanupPageScripts() {
+    pageScripts.forEach(script => {
+        if (script.parentNode) {
+            script.parentNode.removeChild(script)
+        }
+    })
+    pageScripts = []
+}
+
+// Extract and execute scripts from loaded HTML
+function executeScripts(container) {
+    const scriptTags = container.querySelectorAll('script')
+    
+    scriptTags.forEach(oldScript => {
+        const newScript = document.createElement('script')
+        
+        // Copy all attributes from the old script to the new one
+        Array.from(oldScript.attributes).forEach(attr => {
+            newScript.setAttribute(attr.name, attr.value)
+        })
+        
+        // Copy the script content
+        newScript.textContent = oldScript.textContent
+        
+        // Handle deferred scripts
+        if (newScript.hasAttribute('defer')) {
+            // Execute after a short delay to mimic defer behavior
+            setTimeout(() => {
+                document.body.appendChild(newScript)
+                pageScripts.push(newScript)
+            }, 0)
+        } else {
+            // Execute immediately for non-deferred scripts
+            document.body.appendChild(newScript)
+            pageScripts.push(newScript)
+        }
+        
+        // Remove the old script tag from the content
+        oldScript.remove()
+    })
+}
+
 async function navigate(location) {
     // Validation
     if (!location) {
@@ -81,8 +127,17 @@ async function navigate(location) {
         console.log('Redirecting to 404...')
         route = routes["404"]
     }
+    
+    // Clean up scripts from previous page
+    cleanupPageScripts()
+    
     const pageHTML = await fetch(route.template).then((response) => response.text());						// get the html from the template
-    document.querySelector("#dev-cms-content").innerHTML = pageHTML;											// set the content of the content div to the html
+    const contentContainer = document.querySelector("#dev-cms-content")
+    contentContainer.innerHTML = pageHTML;											// set the content of the content div to the html
+    
+    // Execute scripts from the loaded page
+    executeScripts(contentContainer)
+    
     document.title = `${pageTitlePrefix}${route.title}${pageTitleSuffix}`;							// set the title of the document to the title of the route
     document.querySelector('meta[name="description"]')?.setAttribute("content", route.description);		// set the description of the document to the description of the route
     // Jump to the top of the page

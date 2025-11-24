@@ -22,6 +22,8 @@
   --bs-link-hover-color-rgb: var(--bs-primary-rgb);
 
   --bs-border-radius: 16px;
+
+  --bs-body-line-height: 1.625;
 }
 
 .btn {

@@ -32,7 +32,7 @@ const routes = {
 	},
 	pomahame: {
 		template: "./load/cms/pages/pomahame.html",
-		title: "Jak pomáháme",
+		title: "Pomáháme",
 		description: "",
 	},
 	akce: {

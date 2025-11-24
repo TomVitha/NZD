@@ -9,6 +9,9 @@
   </div>
 </div> -->
 
+<script>
+  console.debug("Loaded home.html");
+</script>
 
 <div class="hero d-flex flex-column justify-content-center">
   <div class="container-xxl text-center text-lg-start">
@@ -17,7 +20,7 @@
       <p>Lorem ipsum dolor sit amet consectetur. Massa mauris elementum gravida donec hendrerit fringilla curabitur sed.</p>
       <div>
         <!-- FIXME: On iPad, buttons are short and rounded -- why??!! -->
-        <a href="#page/pomahame" type="button" class="btn btn-primary">Jak pomáháme</a>
+        <a href="#page/pomahame" type="button" class="btn btn-primary">Pomáháme</a>
         <a href="#o-nas" type="button" class="btn">O nás ↓</a>
       </div>
     </div>
@@ -53,7 +56,7 @@
           Lorem ipsum dolor sit amet consectetur. Massa mauris elementum gravida donec hendrerit fringilla curabitur sed. Arcu nulla convallis dolor scelerisque scelerisque feugiat amet aenean odio. Dolor viverra non eget nibh amet vitae mus sed. Vitae nec ornare a cras fringilla pharetra. Elit tincidunt est massa dignissim accumsan mauris quis enim nulla. Ante ac diam amet fermentum commodo duis. Vulputate.
         </p>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6" data-aos="fade-up">
         <img src="./storage/img/couveuse-bebe-premature.webp" alt="" class="img-fluid rounded">
       </div>
     </div>
@@ -108,7 +111,7 @@
 
 <section id="dusan-kunovsky">
   <div class="container-xxl">
-    <div class="row justify-content-center align-items-center gx-5 text-center text-md-start">
+    <div class="row justify-content-center align-items-center g-5 text-center text-md-start">
       <div class="col-md-5 mx-auto">
         <hgroup>
           <p class="subheader">
@@ -129,7 +132,7 @@
 
 <section id="jaroslav-feyereisl">
   <div class="container-xxl">
-    <div class="row justify-content-center align-items-center gx-5 text-center text-md-start">
+    <div class="row justify-content-center align-items-center g-5 text-center text-md-start">
       <div class="col-md-5 mx-auto">
         <hgroup>
           <p class="subheader">Ředitel Ústavu pro péči o&nbsp;matku a&nbsp;dítě</p>
@@ -167,11 +170,40 @@
   </section>
 </section>
 
-<section>
+<!-- * Jedna velká Nejnovější aktualita -->
+<!-- <section>
   <div class="container-xl">
     <div class="row">
       <hgroup class="col align-items-center">
-        <h2>Novinky</h2>
+        <h2>Nejnovější aktualita</h2>
+      </hgroup>
+      <div class="col-auto">
+        <a href="#page/news" type="button" class="btn btn-light">Aktuality →</a>
+      </div>
+    </div>
+    <a href="#" class="row gy-3 link-underline link-underline-opacity-0 text-body my-0">
+      <div class="col-md-5">
+        <div class="">
+          <img src="https://www.zdravideti.cz/Uloziste/fb/fb03b81f-ca4f-4758-86b8-b4e49bd0d4ba.jpg" alt="" class="object-fit-cover rounded">
+        </div>
+      </div>
+      <div class="col">
+        <h3>Charitativní galavečer v Obecním domě</h3>
+        <p>
+          <time datetime="2025-02-06" class="small text-body-secondary">6.2.2025</time>
+        </p>
+        <p>Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+      </div>
+    </a>
+  </div>
+</section> -->
+
+<!-- * 3 aktuality - karty-->
+<!-- <section>
+  <div class="container-xl">
+    <div class="row">
+      <hgroup class="col align-items-center">
+        <h2>Aktuality</h2>
       </hgroup>
       <div class="col-auto">
         <a href="#page/news" type="button" class="btn btn-light">Všechny novinky →</a>
@@ -214,13 +246,14 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
-<section>
-  <div class="container-xl">
+<!-- * 3 aktuality -->
+<section >
+  <div class="container-xxl">
     <div class="row">
       <hgroup class="col align-items-center">
-        <h2>Novinky</h2>
+        <h2>Aktuality</h2>
       </hgroup>
       <div class="col-auto">
         <a href="#page/news" type="button" class="btn btn-light">Všechny novinky →</a>
@@ -230,48 +263,106 @@
       <div class="col-sm">
         <a href="#" class="row gy-3 link-underline link-underline-opacity-0 text-body">
           <div class="col-12">
-            <div class="ratio ratio-4x3">
+            <div class="ratio ratio-16x9">
               <img src="https://www.zdravideti.cz/Uloziste/fb/fb03b81f-ca4f-4758-86b8-b4e49bd0d4ba.jpg" alt="" class="object-fit-cover rounded">
             </div>
           </div>
           <div class="col-12">
-            <h5>Charitativní galavečer v Obecním domě</h5>
-            <p>Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-            <p>
-              <time datetime="2025-02-06" class="small text-body-secondary">6.2.2025</time>
+            <h5 class="mb-1">Charitativní galavečer v Obecním domě</h5>
+            <p class="mb-1">
+              <small>
+                <time datetime="2025-02-06" class="small text-body-secondary">6.2.2025</time>
+              </small>
             </p>
+            <p>Největší rezidenční stavitel CENTRAL GROUP již tradičně podpořil Nadační fond pro zdraví dětí, který vznikl ve prospěch Ústavu pro péči o matku a dítě&hellip;</p>
           </div>
         </a>
       </div>
       <div class="col-sm">
         <a href="#" class="row gy-3 link-underline link-underline-opacity-0 text-body">
           <div class="col-12">
-            <div class="ratio ratio-4x3">
+            <div class="ratio ratio-16x9">
               <img src="https://www.zdravideti.cz/Uloziste/65/656d4384-3210-44a1-9c6f-3b04123e4029.jpg" alt="" class="object-fit-cover rounded">
             </div>
           </div>
           <div class="col-12">
-            <h5>Charitativní galavečer v Obecním domě</h5>
-            <p>Some quick example text to build on the card ghfdghfdghfd.</p>
-            <p>
-              <time datetime="2025-02-29" class="small text-body-secondary">29.2.2024</time>
+            <h5 class="mb-1">Charitativní galavečer v Obecním domě</h5>
+            <p class="mb-1">
+              <small>
+                <time datetime="2025-02-29" class="small text-body-secondary">29.2.2024</time>
+              </small>
             </p>
+            <p>Společnost Central Group každoročně přispívá desítkami milionů na různé charitativní a veřejně prospěšné účely. V minulém týdnu v rámci&hellip;</p>
           </div>
         </a>
       </div>
       <div class="col-sm">
         <a href="#" class="row gy-3 link-underline link-underline-opacity-0 text-body">
           <div class="col-12">
-            <div class="ratio ratio-4x3">
+            <div class="ratio ratio-16x9">
               <img src="https://www.zdravideti.cz/Uloziste/bc/bc4de56e-0efc-43f7-9669-2c1b77f02a64.jpg" alt="" class="object-fit-cover rounded">
             </div>
           </div>
           <div class="col-12">
-            <h5>Charitativní galavečer v OD</h5>
-            <p>Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-            <p>
-              <time datetime="2023-02-23" class="small text-body-secondary">23.2.2023</time>
+            <h5 class="mb-1">Charitativní galavečer v OD</h5>
+            <p class="mb-1">
+              <small>
+                <time datetime="2023-02-23" class="small text-body-secondary">23.2.2023</time>
+              </small>
             </p>
+            <p>Společnost CENTRAL GROUP, největší rezidenční stavitel, uspořádal již tradičně charitativní galavečer ve prospěch Nadačního fondu pro zdraví dětí&hellip;</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- * 2 aktuality -->
+<section>
+  <div class="container-lg">
+    <div class="row">
+      <hgroup class="col align-items-center">
+        <h2>Aktuality</h2>
+      </hgroup>
+      <div class="col-auto">
+        <a href="#page/news" type="button" class="btn btn-light">Všechny novinky →</a>
+      </div>
+    </div>
+    <div class="row my-4 gy-3">
+      <div class="col-sm">
+        <a href="#" class="row gy-3 link-underline link-underline-opacity-0 text-body">
+          <div class="col-12">
+            <div class="ratio ratio-16x9">
+              <img src="https://www.zdravideti.cz/Uloziste/fb/fb03b81f-ca4f-4758-86b8-b4e49bd0d4ba.jpg" alt="" class="object-fit-cover rounded">
+            </div>
+          </div>
+          <div class="col-12">
+            <h5 class="mb-1">Charitativní galavečer v Obecním domě</h5>
+            <p class="mb-1">
+              <small>
+                <time datetime="2025-02-06" class="small text-body-secondary">6.2.2025</time>
+              </small>
+            </p>
+            <p>Největší rezidenční stavitel CENTRAL GROUP již tradičně podpořil Nadační fond pro zdraví dětí, který vznikl ve prospěch Ústavu pro péči o matku a dítě v Podolí&hellip;</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm">
+        <a href="#" class="row gy-3 link-underline link-underline-opacity-0 text-body">
+          <div class="col-12">
+            <div class="ratio ratio-16x9">
+              <img src="https://www.zdravideti.cz/Uloziste/65/656d4384-3210-44a1-9c6f-3b04123e4029.jpg" alt="" class="object-fit-cover rounded">
+            </div>
+          </div>
+          <div class="col-12">
+            <h5 class="mb-1">Charitativní galavečer v Obecním domě</h5>
+            <p class="mb-1">
+              <small>
+                <time datetime="2025-02-29" class="small text-body-secondary">29.2.2024</time>
+              </small>
+            </p>
+            <p>Společnost Central Group každoročně přispívá desítkami milionů na různé charitativní a veřejně prospěšné účely. V minulém týdnu v rámci charitativního galavečera&hellip;</p>
           </div>
         </a>
       </div>
@@ -348,3 +439,9 @@
     </div>
   </div>
 </section>
+
+
+<script>
+  // Does not get executed, because this file is fetched and loaded into index.html
+  console.debug("Hello from home.html");
+</script>

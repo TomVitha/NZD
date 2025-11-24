@@ -23,8 +23,8 @@ header {
   background-color: white;
   top: 0;
   width: 100%;
-  transition-property: background-colors, padding;
-  transition-duration: 150ms;
+  transition-property: background-color, padding, translate;
+  transition-duration: 150ms, 150ms, 400ms;
   
 }
 
@@ -43,6 +43,11 @@ header.fixed {
 
 header.absolute {
   position: absolute;
+}
+
+/* TEMP */
+header.hidden {
+  translate: 0% -100%;
 }
 
 section {
@@ -145,4 +150,31 @@ figcaption {
   .temp-hero {
   padding-block: 7rem;
   }
+}
+
+/* ARTICLE STYLING (BLOG POST, PRESS RELEASE) */
+
+
+/* article section {
+  margin-block: 3rem;
+}
+
+article :is(.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6) {
+  margin-top: 2rem;
+}
+
+article p {
+  margin-bottom: 1lh;
+} */
+
+
+/* WIP */
+:is(.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6) {
+  margin-top: 1.75rem;
+}
+:is(.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6):first-child {
+  margin-top: 0;
+}
+hgroup :is(.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6) {
+  margin-top: 0;
 }
