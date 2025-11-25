@@ -23,9 +23,9 @@ header {
   background-color: white;
   top: 0;
   width: 100%;
-  transition-property: background-color, padding, translate;
-  transition-duration: 150ms, 150ms, 400ms;
-  
+  /* transition-property: background-color, padding, translate;
+  transition-duration: 150ms, 150ms, 400ms; */
+  transition: background-color 150ms, padding 150ms, translate 500ms ease-in-out;
 }
 
 header.transparent:has(.navbar-collapse.collapse:not(.show)) {
@@ -46,7 +46,7 @@ header.absolute {
 }
 
 /* TEMP */
-header.hidden {
+header.hidden:has(.navbar-collapse.collapse:not(.show)) {
   translate: 0% -100%;
 }
 
@@ -130,10 +130,9 @@ figcaption {
   color: var(--bs-secondary-color)
 }
 
-
+/* TEMP */
 .temp-hero {
   --hero-img: url('../img/couveuse-bebe-premature.webp');
-  /* height: 500px; */
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.35), transparent 16%, transparent 46%, white),
     linear-gradient(90deg, rgba(255, 255, 255, 0.35), transparent 20%, transparent 85%, white),
@@ -142,13 +141,14 @@ figcaption {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  
-  padding-block: 4rem;
+
+  padding-block: 5rem 3rem;
+  text-align: center;
 }
 
 @media (min-width: 576px) {
   .temp-hero {
-  padding-block: 7rem;
+    padding-block: 8rem 5rem;
   }
 }
 
@@ -172,9 +172,11 @@ article p {
 :is(.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6) {
   margin-top: 1.75rem;
 }
+
 :is(.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6):first-child {
   margin-top: 0;
 }
+
 hgroup :is(.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6) {
   margin-top: 0;
 }

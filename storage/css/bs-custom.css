@@ -206,5 +206,15 @@ a:where(:hover) {
 .card {
   --bs-border-width: 0px;
   --bs-card-box-shadow: var(--bs-box-shadow);
-  box-shadow: var(--bs-card-box-shadow)
+  box-shadow: var(--bs-card-box-shadow);
+}
+
+/* ? maybe ? */
+figure {
+  margin: 2rem 0;
+}
+
+/* custom class */
+.ratio-16x10 {
+  --bs-aspect-ratio: calc(10 / 16 * 100%);
 }
