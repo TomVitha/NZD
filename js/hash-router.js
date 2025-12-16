@@ -10,29 +10,19 @@ const routes = {
         title: "404",
         description: "",
     },
-    home: {
-        template: "./load/cms/pages/home.html",
-        title: "Home",
+    uvod: {
+        template: "./load/cms/pages/uvod.html",
+        title: "O nadačním fondu",
         description: "",
     },
     pomahame: {
         template: "./load/cms/pages/pomahame.html",
-        title: "Pomáháme",
+        title: "Jak jsme již pomohli",
         description: "",
     },
-    news: {
-        template: "./load/cms/pages/news.html",
-        title: "Aktuality",
-        description: "",
-    },
-    podporte: {
-        template: "./load/cms/pages/podporte.html",
-        title: "Podpořte",
-        description: "",
-    },
-    tiskovka: {
-        template: "./load/cms/pages/tiskovka.html",
-        title: "Vzor tiskovky",
+    pomoci: {
+        template: "./load/cms/pages/pomoci.html",
+        title: "Jak můžete pomoci vy",
         description: "",
     },
     kontakty: {
@@ -40,9 +30,20 @@ const routes = {
         title: "Kontakty",
         description: "",
     },
-    downloads: {
-        template: "./load/cms/pages/downloads.html",
-        title: "Ke stažení",
+    'pro-media': {
+        template: "./load/cms/pages/pro-media.html",
+        title: "Pro média",
+        description: "",
+    },
+    akce: {
+        template: "./load/cms/pages/akce.html",
+        title: "Aktuality",
+        description: "",
+    },
+    // be gone
+    tiskovka: {
+        template: "./load/cms/pages/tiskovka.html",
+        title: "Vzor tiskovky",
         description: "",
     },
 };
@@ -84,18 +85,18 @@ function cleanupPageScripts() {
 // Extract and execute scripts from loaded HTML
 function executeScripts(container) {
     const scriptTags = container.querySelectorAll('script')
-    
+
     scriptTags.forEach(oldScript => {
         const newScript = document.createElement('script')
-        
+
         // Copy all attributes from the old script to the new one
         Array.from(oldScript.attributes).forEach(attr => {
             newScript.setAttribute(attr.name, attr.value)
         })
-        
+
         // Copy the script content
         newScript.textContent = oldScript.textContent
-        
+
         // Handle deferred scripts
         if (newScript.hasAttribute('defer')) {
             // Execute after a short delay to mimic defer behavior
@@ -108,7 +109,7 @@ function executeScripts(container) {
             document.body.appendChild(newScript)
             pageScripts.push(newScript)
         }
-        
+
         // Remove the old script tag from the content
         oldScript.remove()
     })
@@ -127,17 +128,17 @@ async function navigate(location) {
         console.log('Redirecting to 404...')
         route = routes["404"]
     }
-    
+
     // Clean up scripts from previous page
     cleanupPageScripts()
-    
+
     const pageHTML = await fetch(route.template).then((response) => response.text());						// get the html from the template
     const contentContainer = document.querySelector("#dev-cms-content")
     contentContainer.innerHTML = pageHTML;											// set the content of the content div to the html
-    
+
     // Execute scripts from the loaded page
     executeScripts(contentContainer)
-    
+
     document.title = `${pageTitlePrefix}${route.title}${pageTitleSuffix}`;							// set the title of the document to the title of the route
     document.querySelector('meta[name="description"]')?.setAttribute("content", route.description);		// set the description of the document to the description of the route
     // Jump to the top of the page
@@ -153,7 +154,7 @@ window.addEventListener("hashchange", hashRouterHandler);                   // c
 if (window.location.hash.startsWith('#page/')) {
     navigate(window.location.hash.replace("#page/", ""));            // first-time load navigation - from existing hash, or default to index
 } else {
-    navigate("home")
+    navigate("uvod")
 }
 
 

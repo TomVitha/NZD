@@ -85,7 +85,7 @@ section section {
 
 .hero {
   --hero-img: url('../img/hero-img.jpg');
-  min-height: 500px;
+  min-height: 300px;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.6), transparent 20%, transparent 46%, white),
     linear-gradient(90deg, rgba(255, 255, 255, 0.35), transparent 20%, transparent 85%, white),
@@ -96,9 +96,9 @@ section section {
   background-position: 75% 20%;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .hero {
-    min-height: 700px;
+    min-height: 500px;
   }
 }
 
@@ -142,13 +142,13 @@ figcaption {
   background-repeat: no-repeat;
   background-position: center center;
 
-  padding-block: 5rem 3rem;
+  padding-block: 3.5rem 3.5rem;
   text-align: center;
 }
 
 @media (min-width: 576px) {
   .temp-hero {
-    padding-block: 8rem 5rem;
+    padding-block: 6.5rem 6.5rem;
   }
 }
 
