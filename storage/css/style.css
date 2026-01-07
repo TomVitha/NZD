@@ -17,38 +17,69 @@ main#main {
 }
 
 /* WIP */
-header {
-  box-shadow: inset 0px -1px 0px 0px #f2f2f2;
-  z-index: 1;
-  background-color: white;
+
+/* TEMP: Replace with correct selector for PROD */
+.head {
+  position: sticky;
   top: 0;
   width: 100%;
-  /* transition-property: background-color, padding, translate;
-  transition-duration: 150ms, 150ms, 400ms; */
-  transition: background-color 150ms, padding 150ms, translate 500ms ease-in-out;
+  z-index: 5;
 }
 
-header.transparent:has(.navbar-collapse.collapse:not(.show)) {
-  background: transparent;
-  box-shadow: none;
+header {
+  --header-transition-duration: 200ms;
+  --header-logos-scale: 1;
+
+  transition: all var(--header-transition-duration) ease-in-out;
+  padding-block: 12px;
+  padding-inline: 15px;
+
+  background-color: white;
+  box-shadow: 0px 2px 6px 0px #0000001a;
 }
 
-header.sticky {
-  position: sticky;
+
+/* logos container */
+.header-logos {
+  gap: 1.25rem;
+  transition: all var(--header-transition-duration) ease-in-out;
 }
 
-header.fixed {
-  position: fixed;
+header .header-logo {
+  width: auto;
+  transition: all var(--header-transition-duration) ease-in-out;
+  transform-origin: left top;
 }
 
-header.absolute {
-  position: absolute;
+header .logo-nzd {
+  height: calc(34px * var(--header-logos-scale));
 }
 
-/* TEMP */
-header.hidden:has(.navbar-collapse.collapse:not(.show)) {
-  translate: 0% -100%;
+header .logo-cg {
+  height: calc(28px * var(--header-logos-scale));
 }
+
+@media (min-width: 992px) {
+  .head {
+    position: fixed;
+  }
+
+  header {
+    padding-inline: 2rem;
+  }
+
+  header:not(.scrolled) {
+    --header-logos-scale: 1.5;
+    padding-block: 1.5rem;
+  }
+
+  /* * scrolled state */
+  header:not(.scrolled) {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
 
 section {
   margin-block: 3.5rem;
@@ -85,11 +116,11 @@ section section {
 
 .hero {
   --hero-img: url('../img/hero-img.jpg');
-  min-height: 300px;
+  min-height: 350px;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.6), transparent 20%, transparent 46%, white),
     linear-gradient(90deg, rgba(255, 255, 255, 0.35), transparent 20%, transparent 85%, white),
-    linear-gradient(#ffffffbf, #ffffffbf),
+    linear-gradient(#ffffff80, #ffffff80),
     var(--hero-img);
   background-size: cover;
   background-repeat: no-repeat;
@@ -98,7 +129,7 @@ section section {
 
 @media (min-width: 992px) {
   .hero {
-    min-height: 500px;
+    min-height: 550px;
   }
 }
 

@@ -6,24 +6,21 @@ document.querySelectorAll('link:is([href*="app."], [href*="chunk-vendors"], [hre
 
 
 // // WIP
-// document.addEventListener("scroll", headerBgChanger, { passive: true });
+document.addEventListener("scroll", headerBgChanger, { passive: true });
 
-// function headerBgChanger() {
-//   console.log("HEDER CHANGED");
-//   if (window.scrollY > 60) {
-//     document.querySelector(".head header")?.classList.remove("transparent");
-//   } else {
-//     document.querySelector(".head header")?.classList.add("transparent");
-//   }
-// }
+function headerBgChanger() {
+  console.log("HEDER CHANGED");
+  const header = document.querySelector(".head header");
+  header?.classList.toggle("scrolled", window.scrollY > 80);
+}
 
-// document.addEventListener("DOMContentLoaded", (event) => {
-//   console.log("DOM fully loaded and parsed");
-//   // HACK: Trigger header background change after a delay, once the content is loaded
-//   setTimeout(() => {
-//     headerBgChanger();
-//   }, 500);
-// });
+document.addEventListener("DOMContentLoaded", (event) => {
+  console.log("DOM fully loaded and parsed");
+  // HACK: Trigger header background change after a delay, once the content is loaded
+  setTimeout(() => {
+    headerBgChanger();
+  }, 500);
+});
 
 // // WIP: Hide header on scroll down, show on scroll up
 // let lastScrollTop = 0;

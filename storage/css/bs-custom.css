@@ -163,7 +163,7 @@ a:where(:hover) {
 }
 
 .navbar {
-  --bs-navbar-nav-link-padding-x: 0.75rem;
+  /* --bs-navbar-nav-link-padding-x: 0; */
   --bs-navbar-padding-y: 0.0rem;
   --bs-navbar-toggler-border-color: transparent;
   --bs-navbar-toggler-border-radius: 0px;
@@ -171,9 +171,10 @@ a:where(:hover) {
   --bs-navbar-toggler-padding-y: 6px;
   --bs-navbar-toggler-padding-x: 6px;
   --bs-navbar-hover-color: var(--bs-primary);
-
---bs-navbar-brand-padding-y: 0rem;
+  --bs-navbar-brand-padding-y: 0;
+  --bs-navbar-brand-margin-end: 0;
 }
+
 
 .navbar-toggler-icon {
   width: 24px;
