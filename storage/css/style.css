@@ -25,7 +25,7 @@ section {
 
 /* ? maybe ? */
 section:first-of-type {
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
   /* background-color: red; */
 }
 
@@ -87,7 +87,7 @@ header .header-logo {
 }
 
 header .logo-nzd {
-  height: calc(34px * var(--header-logos-scale));
+  height: calc(40px * var(--header-logos-scale));
 }
 
 header .logo-cg {
@@ -97,7 +97,7 @@ header .logo-cg {
 .logo-cg-full-wrapper {
   overflow: visible;
   height: 0;
-  position: absolute;
+  position: relative;
   top: calc(var(--header-padding-y) * -1);
     transition: all var(--header-transition-duration) ease-in-out;
 }
@@ -141,8 +141,10 @@ header .logo-cg {
   background-repeat: no-repeat;
   background-position: 75% 20%;
 
+  min-height: 350px;
+
   /* * ALT Img - máma expanded mirrored */
-  --hero-img: url('../img/pomahame-mama-alt.png');
+  --hero-img: url('../img/nzd-lady-2.jpg');
   background-position: 75% 35%;
 }
 
