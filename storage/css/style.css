@@ -4,7 +4,7 @@ img {
   display: block;
 }
 
-/* todo - possibly update v-data value */
+/* TODO: possibly update v-data value */
 div:has(>#main) {
   display: flex;
   flex-direction: column;
@@ -116,20 +116,52 @@ section section {
 
 .hero {
   --hero-img: url('../img/hero-img.jpg');
-  min-height: 350px;
-  background-image:
+  --hero-bg-opacity: 0.75;
+  --hero-bg:
     linear-gradient(rgba(255, 255, 255, 0.6), transparent 20%, transparent 46%, white),
     linear-gradient(90deg, rgba(255, 255, 255, 0.35), transparent 20%, transparent 85%, white),
-    linear-gradient(#ffffff80, #ffffff80),
+    linear-gradient(rgba(255, 255, 255, var(--hero-bg-opacity)), rgba(255, 255, 255, var(--hero-bg-opacity))),
     var(--hero-img);
+  background-image: var(--hero-bg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 75% 20%;
+  /* min-height: 500px; */
+  /* ? no bg ? */
+  background-image: transparent;
 }
 
 @media (min-width: 992px) {
   .hero {
-    min-height: 550px;
+    min-height: 700px;
+    --hero-bg-opacity: 0.25;
+    /* ? no overlay gradient ? */
+    /* background-image: var(--hero-img); */
+  }
+}
+
+/* TESTING */
+.cg-square {
+  background: #ffed00;
+  aspect-ratio: 6 / 5;
+  padding: 4% 2.5% 0%;
+}
+
+.hero-logo.logo-nzd {
+  width: 120px;
+}
+
+.hero-logo.logo-cg {
+  width: 90px;
+}
+
+@media (min-width: 992px) {
+  .hero-logo.logo-nzd {
+    width: 180px;
+  }
+
+  .hero-logo.logo-cg {
+    width: 130px;
   }
 }
 
@@ -173,13 +205,13 @@ figcaption {
   background-repeat: no-repeat;
   background-position: center center;
 
-  padding-block: 3.5rem 3.5rem;
+  padding-block: 4rem;
   text-align: center;
 }
 
 @media (min-width: 576px) {
   .temp-hero {
-    padding-block: 6.5rem 6.5rem;
+    padding-block: 8.5rem 7rem;
   }
 }
 
