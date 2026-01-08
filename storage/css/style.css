@@ -16,71 +16,6 @@ main#main {
   flex: 1;
 }
 
-/* WIP */
-
-/* TEMP: Replace with correct selector for PROD */
-.head {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 5;
-}
-
-header {
-  --header-transition-duration: 200ms;
-  --header-logos-scale: 1;
-
-  transition: all var(--header-transition-duration) ease-in-out;
-  padding-block: 12px;
-  padding-inline: 15px;
-
-  background-color: white;
-  box-shadow: 0px 2px 6px 0px #0000001a;
-}
-
-
-/* logos container */
-.header-logos {
-  gap: 1.25rem;
-  transition: all var(--header-transition-duration) ease-in-out;
-}
-
-header .header-logo {
-  width: auto;
-  transition: all var(--header-transition-duration) ease-in-out;
-  transform-origin: left top;
-}
-
-header .logo-nzd {
-  height: calc(34px * var(--header-logos-scale));
-}
-
-header .logo-cg {
-  height: calc(28px * var(--header-logos-scale));
-}
-
-@media (min-width: 992px) {
-  .head {
-    position: fixed;
-  }
-
-  header {
-    padding-inline: 2rem;
-  }
-
-  header:not(.scrolled) {
-    --header-logos-scale: 1.5;
-    padding-block: 1.5rem;
-  }
-
-  /* * scrolled state */
-  header:not(.scrolled) {
-    background-color: transparent;
-    box-shadow: none;
-  }
-}
-
-
 section {
   margin-block: 3.5rem;
   scroll-margin-top: 8.5rem;
@@ -113,39 +48,121 @@ section section {
   }
 }
 
+/* WIP */
+
+/* TEMP: Replace with correct selector for PROD */
+.head {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+header {
+  --header-transition-duration: 200ms;
+  --header-logos-scale: 1;
+  --header-padding-y: 12px;
+  --header-padding-x: 15px;
+
+  transition: all var(--header-transition-duration) ease-in-out;
+  padding-block: var(--header-padding-y);
+  padding-inline: var(--header-padding-x);
+
+  background-color: white;
+  box-shadow: 0px 2px 6px 0px #0000001a;
+}
+
+/* # HEADER LOGOS */
+
+/* logos container */
+.header-logos {
+  gap: 1.25rem;
+  transition: all var(--header-transition-duration) ease-in-out;
+}
+
+header .header-logo {
+  width: auto;
+  transition: all var(--header-transition-duration) ease-in-out;
+  transform-origin: left top;
+}
+
+header .logo-nzd {
+  height: calc(34px * var(--header-logos-scale));
+}
+
+header .logo-cg {
+  height: calc(28px * var(--header-logos-scale));
+}
+
+.logo-cg-full-wrapper {
+  overflow: visible;
+  height: 0;
+  position: absolute;
+  top: calc(var(--header-padding-y) * -1);
+    transition: all var(--header-transition-duration) ease-in-out;
+}
+.logo-cg-full {
+  height: calc(80px * var(--header-logos-scale));
+}
+
+@media (min-width: 992px) {
+  .head {
+    position: fixed;
+  }
+
+  header {
+    --header-padding-x: 2rem;
+  }
+
+  header:not(.scrolled) {
+    --header-logos-scale: 1.5;
+    --header-padding-y: 1.5rem;
+  }
+
+  /* * scrolled state */
+  header:not(.scrolled) {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  
+}
+
 
 .hero {
   --hero-img: url('../img/hero-img.jpg');
   --hero-bg-opacity: 0.75;
-  --hero-bg:
+  --hero-overlay:
     linear-gradient(rgba(255, 255, 255, 0.6), transparent 20%, transparent 46%, white),
     linear-gradient(90deg, rgba(255, 255, 255, 0.35), transparent 20%, transparent 85%, white),
-    linear-gradient(rgba(255, 255, 255, var(--hero-bg-opacity)), rgba(255, 255, 255, var(--hero-bg-opacity))),
-    var(--hero-img);
-  background-image: var(--hero-bg);
+    linear-gradient(rgba(255, 255, 255, var(--hero-bg-opacity)), rgba(255, 255, 255, var(--hero-bg-opacity)));
+  /* --hero-bg: var(--hero-img); */
+  background-image: var(--hero-overlay, none), var(--hero-img);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 75% 20%;
-  /* min-height: 500px; */
-  /* ? no bg ? */
-  background-image: transparent;
+
+  /* * ALT Img - máma expanded mirrored */
+  --hero-img: url('../img/pomahame-mama-alt.png');
+  background-position: 75% 35%;
 }
 
 @media (min-width: 992px) {
   .hero {
-    min-height: 700px;
+    min-height: 600px;
     --hero-bg-opacity: 0.25;
     /* ? no overlay gradient ? */
     /* background-image: var(--hero-img); */
   }
 }
 
-/* TESTING */
+/* NOTE: Adds yellow square bg to CG wordmark */
 .cg-square {
   background: #ffed00;
   aspect-ratio: 6 / 5;
   padding: 4% 2.5% 0%;
 }
+
+/* # HERO LOGOS */
 
 .hero-logo.logo-nzd {
   width: 120px;
