@@ -60,11 +60,12 @@ section section {
 
 header {
   --header-transition-duration: 200ms;
+  --header-transition: all var(--header-transition-duration) ease-in-out;
   --header-logos-scale: 1;
   --header-padding-y: 12px;
   --header-padding-x: 15px;
 
-  transition: all var(--header-transition-duration) ease-in-out;
+  transition: var(--header-transition);
   padding-block: var(--header-padding-y);
   padding-inline: var(--header-padding-x);
 
@@ -77,31 +78,28 @@ header {
 /* logos container */
 .header-logos {
   gap: 1.25rem;
-  transition: all var(--header-transition-duration) ease-in-out;
+  transition: var(--header-transition);
 }
 
-header .header-logo {
+.header-logo {
   width: auto;
-  transition: all var(--header-transition-duration) ease-in-out;
+  transition: var(--header-transition);
   transform-origin: left top;
 }
 
 header .logo-nzd {
-  height: calc(40px * var(--header-logos-scale));
+  height: calc(38px * var(--header-logos-scale));
 }
 
-header .logo-cg {
-  height: calc(28px * var(--header-logos-scale));
-}
-
-.logo-cg-full-wrapper {
+.logo-cg-wrapper {
   overflow: visible;
   height: 0;
   position: relative;
-  top: calc(var(--header-padding-y) * -1);
-    transition: all var(--header-transition-duration) ease-in-out;
+  top: calc((var(--header-padding-y) * -1) - 1px);
+  transition: var(--header-transition);
 }
-.logo-cg-full {
+
+.logo-cg {
   height: calc(80px * var(--header-logos-scale));
 }
 
@@ -117,14 +115,10 @@ header .logo-cg {
   header:not(.scrolled) {
     --header-logos-scale: 1.5;
     --header-padding-y: 1.5rem;
-  }
-
-  /* * scrolled state */
-  header:not(.scrolled) {
     background-color: transparent;
     box-shadow: none;
   }
-  
+
 }
 
 
@@ -132,7 +126,7 @@ header .logo-cg {
   --hero-img: url('../img/hero-img.jpg');
   --hero-bg-opacity: 0.75;
   --hero-overlay:
-    linear-gradient(rgba(255, 255, 255, 0.6), transparent 20%, transparent 46%, white),
+    linear-gradient(rgba(255, 255, 255, 0.75), transparent 25%, transparent 46%, white),
     linear-gradient(90deg, rgba(255, 255, 255, 0.35), transparent 20%, transparent 85%, white),
     linear-gradient(rgba(255, 255, 255, var(--hero-bg-opacity)), rgba(255, 255, 255, var(--hero-bg-opacity)));
   /* --hero-bg: var(--hero-img); */
@@ -150,37 +144,8 @@ header .logo-cg {
 
 @media (min-width: 992px) {
   .hero {
-    min-height: 600px;
     --hero-bg-opacity: 0.25;
-    /* ? no overlay gradient ? */
-    /* background-image: var(--hero-img); */
-  }
-}
-
-/* NOTE: Adds yellow square bg to CG wordmark */
-.cg-square {
-  background: #ffed00;
-  aspect-ratio: 6 / 5;
-  padding: 4% 2.5% 0%;
-}
-
-/* # HERO LOGOS */
-
-.hero-logo.logo-nzd {
-  width: 120px;
-}
-
-.hero-logo.logo-cg {
-  width: 90px;
-}
-
-@media (min-width: 992px) {
-  .hero-logo.logo-nzd {
-    width: 180px;
-  }
-
-  .hero-logo.logo-cg {
-    width: 130px;
+    min-height: 600px;
   }
 }
 

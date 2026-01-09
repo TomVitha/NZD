@@ -136,7 +136,6 @@ a:where(:hover) {
 
 .h2, h2 {
   font-size: calc(1rem * pow(var(--temp-headings-slope), 4));
-  font-weight: 750;
 }
 
 .h3, h3 {
