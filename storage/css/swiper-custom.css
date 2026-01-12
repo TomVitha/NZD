@@ -1,0 +1,11 @@
+:root {
+  --swiper-theme-color: white;
+  --swiper-navigation-size: 0px;
+  --swiper-navigation-sides-offset: 8px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --swiper-navigation-size: 32px;
+  }
+}

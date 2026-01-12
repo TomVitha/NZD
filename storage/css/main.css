@@ -1,18 +1,13 @@
-/* ! IMPORTANT: Default app stylings (app.[HASH].css, chunk-vendors.[HASH].css) gets REMOVED via JS to allow for a clean slate. */
+/* ! IMPORTANT: Default app stylings (app.[HASH].css, chunk-vendors.[HASH].css) get REMOVED via JS to create a clean slate. */
 
-/* EXTERNAL */
-/* Libraries */
-/* Bootstrap */
 @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css'); 
-/* Tabler */
-/* @import url('https://cdn.jsdelivr.net/npm/@tabler/core@1.4.0/dist/css/tabler.min.css');  */
+@import url('https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css');
 
-/* INTERNAL */
-@import url('bs-custom.css');
-/* @import url('_tblr-custom.css'); */
+
+@import url('bootstrap-custom.css');
+@import url('swiper-custom.css');
+
 @import url('fonts.css');
-/* ? reset / normalize ? - if needed */
-
 @import url('style.css');
 
 /* ? Use @layers? We can @import into @layer, like: */

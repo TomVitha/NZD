@@ -131,12 +131,54 @@
     </div>
   </div>
   <section class="container-xxl">
-    <a href="https://upmd.cz/">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Podol%C3%AD_porodnice_3.jpg" title="https://upmd.cz/" alt="Fotografie ÚPMD" class="img-fluid rounded">
-      <!-- <img src="https://www.upmd.cz/wp-content/uploads/2022/04/homepage-1.jpg" title="https://upmd.cz/" alt="Fotografie ÚPMD" class="img-fluid rounded"> -->
-    </a>
+    <div class="swiper rounded">
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img src="https://i.ibb.co/v6qRV0n4/1.jpg" alt="" class="img-fluid w-100">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://i.ibb.co/6j92V24/2.jpg" alt="" class="img-fluid w-100">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://i.ibb.co/TBd8PmSJ/3.jpg" alt="" class="img-fluid w-100">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://i.ibb.co/7cxg5cv/4.jpg" alt="" class="img-fluid w-100">
+        </div>
+      </div>
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
   </section>
 </section>
+
+<!-- <section id="upmd">
+  <div class="container-md">
+    <div class="row">
+      <div class="text-center">
+        <hgroup>
+          <p class="subheader" hidden>ÚPMD</p>
+          <p class="subheader">
+            <a href="https://www.upmd.cz/"><img src="./storage/img/logos/Logo-UPMD.svg" alt="ÚPMD" height="45" class="mx-auto"></a>
+          </p>
+          <h2>Ústav pro péči o matku a dítě</h2>
+        </hgroup>
+        <p>
+          Specializované zdravotnické zařízení v Podolí zahájilo svou činnost jako sanatorium již v roce 1914. Dnešní Ústav pro péči o matku a dítě patří svou prestiží a odbornou specializací již neodmyslitelně k dějinám českého porodnictví. Špičkový tým porodníků, gynekologů a neonatologů zajišťuje komplexní péči jak o ženy a jejich děti během těhotenství a porodu, tak i o ženy, které již nejsou v reprodukčním věku. Pracoviště reprodukční imunologie Ústavu pro péči o matku a dítě je nejznámějším specializovaným pracovištěm v České republice, které se zabývá poruchami plodnosti. V rámci tohoto zdravotnického zařízení působí také perinatologické centrum, jež navštěvují ženy s problémy, které se mohou vyskytnout během těhotenství. Toto pracoviště poskytuje také péči o novorozence s nízkou porodní hmotností.
+        </p>
+      </div>
+    </div>
+  </div>
+  <section class="container-xxl">
+    <a href="https://upmd.cz/">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Podol%C3%AD_porodnice_3.jpg" title="https://upmd.cz/" alt="Fotografie ÚPMD" class="img-fluid rounded">
+    </a>
+  </section>
+</section> -->
 
 <!-- Feyereisl backup -->
 <!-- <section id="jaroslav-feyereisl">
@@ -488,3 +530,24 @@
     </div>
   </div>
 </section>
+
+<script type="module">
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.mjs'
+
+  const swiper = new Swiper('.swiper', {
+    // Parameters
+    loop: true,
+
+    // Pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
