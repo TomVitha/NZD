@@ -61,8 +61,8 @@ section section {
 header {
   --header-transition-duration: 200ms;
   --header-transition: all var(--header-transition-duration) ease-in-out;
-  --header-logos-scale: 1;
-  --header-padding-y: 12px;
+  --header-logos-scale: 0.90;
+  --header-padding-y: 8px;
   --header-padding-x: 15px;
 
   transition: var(--header-transition);
@@ -108,14 +108,13 @@ header .logo-nzd {
     position: fixed;
   }
 
-  header {
-    /* --header-padding-x: 2rem; */
+  header:not(.scrolled):not(:has(.navbar-collapse:is(.show,.collapsing))) {
+    background-color: transparent;
   }
 
   header:not(.scrolled) {
     --header-logos-scale: 1.5;
     --header-padding-y: 1.0rem;
-    background-color: transparent;
     box-shadow: none;
   }
 
@@ -124,28 +123,23 @@ header .logo-nzd {
 
 .hero {
   --hero-img: url('../img/nzd-lady-2.jpg');
-  --hero-bg-opacity: 0.75;
-  /* --hero-overlay:
-    linear-gradient(rgb(255, 255, 255) 0%, transparent 0%),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.35), transparent 20%, transparent 85%, white),
-    linear-gradient(rgba(255, 255, 255, var(--hero-bg-opacity)), rgba(255, 255, 255, var(--hero-bg-opacity))); */
-  /* --hero-overlay:
-    linear-gradient(rgba(255, 255, 255, 0.85), transparent 25%, transparent 46%, transparent),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.35), transparent 20%, transparent 85%, white),
-    linear-gradient(rgba(255, 255, 255, var(--hero-bg-opacity)), rgba(255, 255, 255, var(--hero-bg-opacity))); */
+  --hero-overlay:
+    linear-gradient(transparent 10%, rgba(255, 255, 255, 0.9) 80%);
   /* --hero-bg: var(--hero-img); */
   background-image: var(--hero-overlay, none), var(--hero-img);
-  background-size: auto 125%;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% -20%;
+  background-position: 75% 0%;
   min-height: 350px;
 
 }
 
 @media (min-width: 992px) {
   .hero {
-    --hero-bg-opacity: 0.1;
     min-height: 600px;
+    background-size: auto 125%;
+    background-position: 50% -20%;
+    background-image: var(--hero-img);
   }
 }
 
@@ -177,45 +171,8 @@ figcaption {
   color: var(--bs-secondary-color)
 }
 
-/* TEMP */
-.temp-hero {
-  --hero-img: url('../img/couveuse-bebe-premature.webp');
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.35), transparent 16%, transparent 46%, white),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.35), transparent 20%, transparent 85%, white),
-    linear-gradient(#ffffffe1, #ffffffbf),
-    var(--hero-img);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-
-  padding-block: 4rem;
-  text-align: center;
-}
-
-@media (min-width: 576px) {
-  .temp-hero {
-    padding-block: 8.5rem 7rem;
-  }
-}
-
-/* ARTICLE STYLING (BLOG POST, PRESS RELEASE) */
 
 
-/* article section {
-  margin-block: 3rem;
-}
-
-article :is(.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6) {
-  margin-top: 2rem;
-}
-
-article p {
-  margin-bottom: 1lh;
-} */
-
-
-/* WIP */
 :is(.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6) {
   margin-top: 1.75rem;
 }
