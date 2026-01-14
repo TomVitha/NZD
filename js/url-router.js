@@ -20,46 +20,41 @@ document.addEventListener("click", (event) => {
 
 // create an object that maps the url to the template, title, and description
 const routes = {
-	404: {
-		template: "./load/cms/pages/404.html",
-		title: "404",
-		description: "",
-	},
-	home: {
-		template: "./load/cms/pages/home.html",
-		title: "Home",
-		description: "",
-	},
-	pomahame: {
-		template: "./load/cms/pages/pomahame.html",
-		title: "Pomáháme",
-		description: "",
-	},
-	akce: {
-		template: "./load/cms/pages/akce.html",
-		title: "Charitativní akce",
-		description: "",
-	},
-	podporte: {
-		template: "./load/cms/pages/podporte.html",
-		title: "Podpořte",
-		description: "",
-	},
-	tiskovka: {
-		template: "./load/cms/pages/tiskovka.html",
-		title: "Vzor tiskovky",
-		description: "",
-	},
-	kontakty: {
-		template: "./load/cms/pages/kontakty.html",
-		title: "Kontakty",
-		description: "",
-	},
-	downloads: {
-		template: "./load/cms/pages/downloads.html",
-		title: "Ke stažení",
-		description: "",
-	},
+  404: {
+    template: "./load/cms/pages/404.html",
+    title: "404",
+    description: "",
+  },
+  uvod: {
+    template: "./load/cms/pages/uvod.html",
+    title: "O nadačním fondu",
+    description: "",
+  },
+  pomahame: {
+    template: "./load/cms/pages/pomahame.html",
+    title: "Jak jsme již pomohli",
+    description: "",
+  },
+  pomoci: {
+    template: "./load/cms/pages/pomoci.html",
+    title: "Jak můžete pomoci vy",
+    description: "",
+  },
+  kontakty: {
+    template: "./load/cms/pages/kontakty.html",
+    title: "Kontakty",
+    description: "",
+  },
+  'ke-stazeni': {
+    template: "./load/cms/pages/ke-stazeni.html",
+    title: "Ke stažení",
+    description: "",
+  },
+  akce: {
+    template: "./load/cms/pages/akce.html",
+    title: "Aktuality",
+    description: "",
+  },
 };
 
 // create a function that watches the url and calls the urlLocationHandler

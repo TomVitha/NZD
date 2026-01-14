@@ -229,3 +229,7 @@ figure {
 .ratio-16x10 {
   --bs-aspect-ratio: calc(10 / 16 * 100%);
 }
+
+.list-group {
+  --bs-list-group-item-padding-x: 0rem;
+}
