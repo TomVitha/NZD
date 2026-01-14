@@ -35,15 +35,15 @@
   <div class="container-xxl">
     <div class="row text-center justify-content-center gy-3">
       <div class="col-sm-3 col-md-2">
-        <strong class="h1 text-primary">19</strong>
+        <strong class="h1 text-primary" id="scroll-up-1">19</strong>
         <p class="mb-0">let pomoci</p>
       </div>
       <div class="col-sm-3 col-md-2">
-        <strong class="h1 text-primary">24</strong>
+        <strong class="h1 text-primary" id="scroll-up-2">24</strong>
         <p class="mb-0">milionů Kč</p>
       </div>
       <div class="col-sm-3 col-md-2">
-        <strong class="h1 text-primary">220</strong>
+        <strong class="h1 text-primary" id="scroll-up-3">220</strong>
         <p class="mb-0">lékařských programů financováno</p>
       </div>
     </div>
@@ -282,4 +282,34 @@
       delay: 5000,
     },
   });
+</script>
+
+<script type="module">
+  import { CountUp } from 'https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.9.0/countUp.js'
+
+  console.log(CountUp);
+
+  const countUpOptions = {
+    duration: 2,
+    enableScrollSpy: true,
+    scrollSpyOnce: true
+  }
+
+  window.onload = function () {
+    const ids = ['scroll-up-1', 'scroll-up-2', 'scroll-up-3'];
+
+    ids.forEach(id => {
+      // Extract the target number from the HTML element's text
+      const element = document.getElementById(id);
+      const endVal = element ? element.innerText : 0;
+      
+      const countUp = new CountUp(id, endVal, countUpOptions);
+      
+      if (!countUp.error) {
+        countUp.start();
+      } else {
+        console.error(countUp.error);
+      }
+    });
+  }
 </script>
