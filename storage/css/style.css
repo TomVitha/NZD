@@ -88,7 +88,7 @@ header {
 }
 
 header .logo-nzd {
-  height: calc(38px * var(--header-logos-scale));
+  height: calc(46px * var(--header-logos-scale));
 }
 
 .logo-cg-wrapper {
@@ -100,7 +100,7 @@ header .logo-nzd {
 }
 
 .logo-cg {
-  height: calc(80px * var(--header-logos-scale));
+  height: calc(78px * var(--header-logos-scale));
 }
 
 @media (min-width: 992px) {
@@ -114,7 +114,7 @@ header .logo-nzd {
 
   header:not(.scrolled) {
     --header-logos-scale: 1.5;
-    --header-padding-y: 1.5rem;
+    --header-padding-y: 1.0rem;
     background-color: transparent;
     box-shadow: none;
   }
@@ -123,28 +123,28 @@ header .logo-nzd {
 
 
 .hero {
-  --hero-img: url('../img/hero-img.jpg');
+  --hero-img: url('../img/nzd-lady-2.jpg');
   --hero-bg-opacity: 0.75;
-  --hero-overlay:
-    linear-gradient(rgba(255, 255, 255, 0.75), transparent 25%, transparent 46%, white),
+  /* --hero-overlay:
+    linear-gradient(rgb(255, 255, 255) 0%, transparent 0%),
     linear-gradient(90deg, rgba(255, 255, 255, 0.35), transparent 20%, transparent 85%, white),
-    linear-gradient(rgba(255, 255, 255, var(--hero-bg-opacity)), rgba(255, 255, 255, var(--hero-bg-opacity)));
+    linear-gradient(rgba(255, 255, 255, var(--hero-bg-opacity)), rgba(255, 255, 255, var(--hero-bg-opacity))); */
+  /* --hero-overlay:
+    linear-gradient(rgba(255, 255, 255, 0.85), transparent 25%, transparent 46%, transparent),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.35), transparent 20%, transparent 85%, white),
+    linear-gradient(rgba(255, 255, 255, var(--hero-bg-opacity)), rgba(255, 255, 255, var(--hero-bg-opacity))); */
   /* --hero-bg: var(--hero-img); */
   background-image: var(--hero-overlay, none), var(--hero-img);
-  background-size: cover;
+  background-size: auto 125%;
   background-repeat: no-repeat;
-  background-position: 75% 20%;
-
+  background-position: 50% -20%;
   min-height: 350px;
 
-  /* * ALT Img - máma expanded mirrored */
-  --hero-img: url('../img/nzd-lady-2.jpg');
-  background-position: 75% 35%;
 }
 
 @media (min-width: 992px) {
   .hero {
-    --hero-bg-opacity: 0.25;
+    --hero-bg-opacity: 0.1;
     min-height: 600px;
   }
 }

@@ -9,7 +9,7 @@ document.addEventListener("scroll", headerBgChanger, { passive: true });
 
 function headerBgChanger() {
   const header = document.querySelector(".head header");
-  header?.classList.toggle("scrolled", window.scrollY > 80);
+  header?.classList.toggle("scrolled", window.scrollY > 50);
 }
 
 /// Call headerBgChanger in case page loads in the scrolled position

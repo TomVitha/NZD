@@ -180,6 +180,9 @@ a:where(:hover) {
   height: 24px;
 }
 
+.navbar-nav {
+  --bs-nav-link-color: #2a2a2a;
+}
 
 
 .blockquote {
