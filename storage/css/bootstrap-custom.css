@@ -181,7 +181,7 @@ a:where(:hover) {
 }
 
 .navbar-nav {
-  --bs-nav-link-color: #2a2a2a;
+  --bs-nav-link-color: var(--bs-body-color);
 }
 
 

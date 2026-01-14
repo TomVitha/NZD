@@ -109,7 +109,7 @@ header .logo-nzd {
   }
 
   header {
-    --header-padding-x: 2rem;
+    /* --header-padding-x: 2rem; */
   }
 
   header:not(.scrolled) {
@@ -226,4 +226,9 @@ article p {
 
 hgroup :is(.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6) {
   margin-top: 0;
+}
+
+
+::marker {
+  color: var(--bs-primary);
 }
