@@ -203,6 +203,7 @@ a:where(:hover) {
 }
 
 .accordion {
+  --bs-accordion-bg: transparent;
   --bs-accordion-btn-focus-box-shadow: transparent;
   --bs-accordion-active-bg: transparent;
   --bs-accordion-btn-color: inherit;
