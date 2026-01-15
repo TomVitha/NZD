@@ -100,7 +100,7 @@ header .logo-nzd {
 }
 
 .logo-cg {
-  height: calc(78px * var(--header-logos-scale));
+  height: calc(90px * var(--header-logos-scale));
 }
 
 @media (min-width: 992px) {
@@ -138,7 +138,7 @@ header .logo-nzd {
   .hero {
     min-height: 600px;
     background-size: auto 125%;
-    background-position: 50% -20%;
+    background-position: 50% -24%;
     background-image: var(--hero-img);
   }
 }

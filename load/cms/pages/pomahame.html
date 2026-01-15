@@ -1,18 +1,18 @@
 <section class="container-xl">
   <h1 class="h2 text-center">Za 19 let jsme podpořili na 220 projektů</h1>
-   <div class="rounded overflow-hidden my-5">
-     <div class="row g-3">
+  <div class="rounded overflow-hidden my-5">
+    <div class="row g-3">
       <div class="col-12">
-        <img src="https://central-group.cz/storage/NZD/img/upmd/UPMD_RES_PED-1_3840.jpg" alt="" class="ar-16x9">
+        <img src="https://www.central-group.cz/storage/NZD/img/upmd/UPMD_RES_PED-4_3840.jpg" alt="" class="ar-16x9">
       </div>
       <div class="col-6">
-        <img src="https://central-group.cz/storage/NZD/img/upmd/shutterstock_1901730184_3840.jpg" alt="">
+        <img src="https://central-group.cz/storage/NZD/img/upmd/IMG_6794-2.jpg" alt="" class="ar-16x9">
       </div>
       <div class="col-6">
-        <img src="https://central-group.cz/storage/NZD/img/upmd/shutterstock_2664231115_3840.jpg" alt="">
+        <img src="https://central-group.cz/storage/NZD/img/upmd/shutterstock_1901730184_3840.jpg" alt="" class="ar-16x9">
       </div>
-     </div>
-   </div>
+    </div>
+  </div>
 </section>
 
 
@@ -73,8 +73,28 @@
     </div>
   </div>
   <div class="container-xxl">
-    <!-- TEMP URL -->
-    <img src="https://i.ibb.co/0Rtgs5wR/UPMD-RES-PED-2.jpg" alt="" class="rounded my-5" style="aspect-ratio: 1.7777; object-fit: cover; object-position: center;">
+    <div class="swiper rounded ar-16x9">
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img src="https://www.central-group.cz/storage/NZD/img/upmd/UPMD_RES_PED-2_3840.jpg" alt="" class="img-fluid w-100">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://central-group.cz/storage/NZD/img/upmd/UPMD_RES_PED-1-Alt-Crop_3840.jpg" alt="" class="img-fluid w-100">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://central-group.cz/storage/NZD/img/upmd/487850925_9382925158410899_7280847664229840440_n.jpg" alt="" class="img-fluid w-100">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://central-group.cz/storage/NZD/img/upmd/congresss.jpg" alt="" class="img-fluid w-100">
+        </div>
+      </div>
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
   </div>
 </section>
 
@@ -1347,3 +1367,29 @@
   </section>
 
 </section>
+
+<script type="module">
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.mjs'
+
+  const swiper = new Swiper('.swiper', {
+    // Parameters
+    loop: true,
+
+    // Pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // autoplay
+    autoplay: {
+      delay: 3000,
+    },
+  });
+</script>
