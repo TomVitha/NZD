@@ -203,11 +203,19 @@ a:where(:hover) {
 }
 
 .accordion {
-  --bs-accordion-bg: transparent;
-  --bs-accordion-btn-focus-box-shadow: transparent;
   --bs-accordion-active-bg: transparent;
-  --bs-accordion-btn-color: inherit;
   --bs-accordion-active-color: inherit;
+  --bs-accordion-bg: transparent;
+  --bs-accordion-body-padding-x: 0;
+  --bs-accordion-btn-color: inherit;
+  --bs-accordion-btn-focus-box-shadow: transparent;
+  --bs-accordion-btn-icon-width: 1.0rem;
+  --bs-accordion-btn-padding-x: 0
+}
+
+.list-group {
+  --bs-list-group-item-padding-x: 0rem;
+  --bs-list-group-bg: transparent;
 }
 
 .card {
@@ -225,11 +233,8 @@ figure {
   margin: 2rem 0;
 }
 
-/* custom class */
-.ratio-16x10 {
-  --bs-aspect-ratio: calc(10 / 16 * 100%);
-}
 
-.list-group {
-  --bs-list-group-item-padding-x: 0rem;
+.accordion-button {
+    gap: .5rem;
+    /* width: fit-content; */
 }

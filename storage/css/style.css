@@ -88,7 +88,7 @@ header {
 }
 
 header .logo-nzd {
-  height: calc(46px * var(--header-logos-scale));
+  height: calc(50px * var(--header-logos-scale));
 }
 
 .logo-cg-wrapper {
@@ -188,4 +188,26 @@ hgroup :is(.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6) {
 
 ::marker {
   color: var(--bs-primary);
+}
+
+[class*="ar-"] {
+  object-fit: cover;
+  object-position: center;
+}
+
+.ar-1,
+.ar-1x1 {
+  aspect-ratio: 1;
+}
+
+.ar-16x9 {
+  aspect-ratio: 16/9;
+}
+
+.ar-16x10 {
+  aspect-ratio: 16/10;
+}
+
+.ar-4x3 {
+  aspect-ratio: 4/3;
 }
