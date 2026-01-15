@@ -108,7 +108,7 @@ header .logo-nzd {
     position: fixed;
   }
 
-  header:not(.scrolled):not(:has(.navbar-collapse:is(.show,.collapsing))) {
+  header:not(.scrolled):not(:has(.navbar-collapse:is(.show, .collapsing))) {
     background-color: transparent;
   }
 
@@ -210,4 +210,21 @@ hgroup :is(.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6) {
 
 .ar-4x3 {
   aspect-ratio: 4/3;
+}
+
+.square-tabs .nav-item {
+  aspect-ratio: 1;
+}
+
+.square-tabs .nav-link {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: end;
+  text-align: start;
+}
+
+.temp-squared-switches .active {
+  background-color: var(--bs-primary) !important;
+  color: white !important;
 }
