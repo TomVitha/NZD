@@ -240,12 +240,13 @@ figure {
 }
 
 .nav-tabs {
-  --bs-nav-tabs-border-radius: 0.5em;
+  --bs-nav-tabs-border-radius: 999px;
   --bs-nav-tabs-border-width: 0;
 }
 
 .nav-tabs .nav-link {
   border-radius: var(--bs-nav-tabs-border-radius);
+  background-color: var(--bs-primary-bg-subtle);
 }
 
 .nav-tabs .nav-item.show .nav-link,
