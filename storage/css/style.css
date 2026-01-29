@@ -52,7 +52,7 @@ section section {
 
 /* TEMP: Replace with correct selector for PROD */
 .head {
-  position: sticky;
+  /* position: sticky; */
   top: 0;
   width: 100%;
   z-index: 5;
@@ -62,14 +62,15 @@ header {
   --header-transition-duration: 200ms;
   --header-transition: all var(--header-transition-duration) ease-in-out;
   --header-logos-scale: 0.95;
-  --header-padding-y: 8px;
+  --header-padding-y: 0px;
   --header-padding-x: 15px;
 
   transition: var(--header-transition);
   padding-block: var(--header-padding-y);
   padding-inline: var(--header-padding-x);
 
-  background-color: white;
+  background-color: var(--bs-primary);
+  color: white;
   box-shadow: 0px 2px 6px 0px #0000001a;
 }
 
@@ -91,33 +92,34 @@ header .logo-nzd {
   height: calc(50px * var(--header-logos-scale));
 }
 
-.logo-cg-wrapper {
-  overflow: visible;
-  height: 0;
-  position: relative;
-  top: calc((var(--header-padding-y) * -1) - 1px);
-  transition: var(--header-transition);
-}
+
 
 .logo-cg {
-  height: calc(90px * var(--header-logos-scale));
+  height: calc(95px * var(--header-logos-scale));
 }
 
 @media (min-width: 992px) {
   .head {
-    position: fixed;
+    /* position: fixed; */
   }
 
   header:not(.scrolled):not(:has(.navbar-collapse:is(.show, .collapsing))) {
-    background-color: transparent;
+    /* background-color: transparent; */
   }
 
   header:not(.scrolled) {
     --header-logos-scale: 1.5;
-    --header-padding-y: 1.0rem;
-    box-shadow: none;
+    /* --header-padding-y: 1.0rem; */
+    /* box-shadow: none; */
   }
 
+}
+
+@media (max-width: 991px) {
+  header:has(.navbar-collapse:is(.show, .collapsing)) .header-logos {
+    /* background-color: orange !important; */
+    translate: 0 -100%;
+  }
 }
 
 
@@ -129,18 +131,23 @@ header .logo-nzd {
   background-image: var(--hero-overlay, none), var(--hero-img);
   background-size: auto 375px;
   background-repeat: no-repeat;
-  background-position: 75% 8rem;
-  height: 450px;
-  padding-block: 2.25rem 1.5rem;
+  background-position: 75% 9.5rem;
+  height: 475px;
+  padding-block: 4rem 1.5rem;
 
+}
+
+@media (min-width: 576px) {
+  .hero {
+    background-size: auto 125%;
+    background-position: 64% -0%;
+    background-image: var(--hero-img);
+  }
 }
 
 @media (min-width: 992px) {
   .hero {
     height: 600px;
-    background-size: auto 125%;
-    background-position: 50% -24%;
-    background-image: var(--hero-img);
   }
 }
 
@@ -150,8 +157,8 @@ hgroup p,
   color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
   font-family: var(--bs-custom-headings-font-family);
   font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.075em;
+  font-weight: 500;
+  letter-spacing: 0.025em;
   text-transform: uppercase;
   margin-bottom: 0.25rem;
 }

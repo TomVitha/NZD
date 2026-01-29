@@ -1,15 +1,12 @@
 /* For modifying Bootstrap variables, and classes or selectors present in Bootstrap */
 /* For wholly new custom styles, place them in _style.css */
+/* Prefix "bs-custom" indicates new custom properties not present in standard Bootstrap */
 
-/* * VARIABLES * */
-
-/* NOTE: Prefix "--bs-custom-" indicates new custom properties not present in standard Bootstrap */
 :root {
-  --bs-body-font-family: "Inter";
-  --bs-custom-headings-font-family: "Plus Jakarta Sans";
+  --bs-body-font-family: "Exo 2", "Roboto", system-ui, sans-serif;
   /* * COLORS */
-  --bs-primary: #fa709a;
-  --bs-primary-rgb: 250, 112, 154;
+  --bs-primary: #870d3e;
+  --bs-primary-rgb: 135, 13, 62;
   /* todo */
   /* --bs-primary-text-emphasis:  */
   --bs-primary-bg-subtle: #ffe0ea;
@@ -119,49 +116,48 @@ a:where(:hover) {
 
 /* Headings */
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-  font-family: var(--bs-custom-headings-font-family);
-  font-weight: 700;
+  --headings-slope: 1.185;
+  color: var(--bs-primary);
+  font-weight: 300;
   line-height: 1.1;
   margin-bottom: 1rem;
   letter-spacing: -0.015em;
   margin-bottom: 0.5em;
-  /* WIP */
-  --temp-headings-slope: 1.185;
 }
 
 .h1, h1 {
-  font-size: calc(1rem * pow(var(--temp-headings-slope), 5));
-  font-weight: 800;
+  font-size: calc(1rem * pow(var(--headings-slope), 5));
 }
 
 .h2, h2 {
-  font-size: calc(1rem * pow(var(--temp-headings-slope), 4));
+  font-size: calc(1rem * pow(var(--headings-slope), 4));
 }
 
 .h3, h3 {
-  font-size: calc(1rem * pow(var(--temp-headings-slope), 3));
+  font-size: calc(1rem * pow(var(--headings-slope), 3));
 }
 
 .h4, h4 {
-  font-size: calc(1rem * pow(var(--temp-headings-slope), 2));
+  font-size: calc(1rem * pow(var(--headings-slope), 2));
 }
 
 .h5, h5 {
-  font-size: calc(1rem * pow(var(--temp-headings-slope), 1));
+  font-size: calc(1rem * pow(var(--headings-slope), 1));
 }
 
 .h6, h6 {
-  font-size: calc(1rem * pow(var(--temp-headings-slope), 0));
+  font-size: calc(1rem * pow(var(--headings-slope), 0));
 }
 
 /* Desktop */
 @media (min-width: 992px) {
   .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-    --temp-headings-slope: 1.27;
+    --headings-slope: 1.27;
   }
 }
 
 .navbar {
+  --bs-navbar-color: white;
   /* --bs-navbar-nav-link-padding-x: 0; */
   --bs-navbar-padding-y: 0.0rem;
   --bs-navbar-toggler-border-color: transparent;
@@ -172,8 +168,13 @@ a:where(:hover) {
   --bs-navbar-hover-color: var(--bs-primary);
   --bs-navbar-brand-padding-y: 0;
   --bs-navbar-brand-margin-end: 0;
+  --bs-navbar-brand-color: inherit;
+  --bs-navbar-brand-hover-color: inherit;
 }
 
+.navbar-toggler-icon {
+  filter: brightness(0) invert(1);
+}
 
 .navbar-toggler-icon {
   width: 24px;
@@ -181,7 +182,8 @@ a:where(:hover) {
 }
 
 .navbar-nav {
-  --bs-nav-link-color: var(--bs-body-color);
+  --bs-nav-link-color: inherit;
+  --bs-nav-link-hover-color: inherit;
 }
 
 
@@ -254,4 +256,12 @@ figure {
   background-color: var(--bs-primary);
   border: none;
   color: white;
+}
+
+.w-0 {
+  width: 0 !important;
+}
+
+.h-0 {
+  height: 0 !important;
 }

@@ -5,7 +5,7 @@ document.querySelectorAll('link:is([href*="app."], [href*="chunk-vendors"], [hre
 })
 
 
-document.addEventListener("scroll", headerBgChanger, { passive: true });
+// document.addEventListener("scroll", headerBgChanger, { passive: true });
 
 function headerBgChanger() {
   const header = document.querySelector(".head header");
