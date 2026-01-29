@@ -61,7 +61,7 @@ section section {
 header {
   --header-transition-duration: 200ms;
   --header-transition: all var(--header-transition-duration) ease-in-out;
-  --header-logos-scale: 0.90;
+  --header-logos-scale: 0.95;
   --header-padding-y: 8px;
   --header-padding-x: 15px;
 
@@ -124,19 +124,20 @@ header .logo-nzd {
 .hero {
   --hero-img: url('../img/nzd-lady-2.jpg');
   --hero-overlay:
-    linear-gradient(transparent 10%, rgba(255, 255, 255, 0.9) 80%);
+    linear-gradient(transparent 10%, rgba(255, 255, 255, 0.25) 80%);
   /* --hero-bg: var(--hero-img); */
   background-image: var(--hero-overlay, none), var(--hero-img);
-  background-size: cover;
+  background-size: auto 375px;
   background-repeat: no-repeat;
-  background-position: 75% 0%;
-  min-height: 350px;
+  background-position: 75% 8rem;
+  height: 450px;
+  padding-block: 2.25rem 1.5rem;
 
 }
 
 @media (min-width: 992px) {
   .hero {
-    min-height: 600px;
+    height: 600px;
     background-size: auto 125%;
     background-position: 50% -24%;
     background-image: var(--hero-img);
