@@ -1,25 +1,12 @@
-/* ! IMPORTANT: Removes default app styling ! */
-document.querySelectorAll('link:is([href*="app."], [href*="chunk-vendors"], [href*="footer-cg"])[href*=".css"]').forEach((element) => {
-  console.warn("Removing element:", element)
-  element.remove()
-})
-
+// import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.mjs'
 
 // document.addEventListener("scroll", headerBgChanger, { passive: true });
 
-function headerBgChanger() {
-  const header = document.querySelector(".head header");
-  header?.classList.toggle("scrolled", window.scrollY > 10);
-}
+// function headerBgChanger() {
+//   const header = document.querySelector(".head header");
+//   header?.classList.toggle("scrolled", window.scrollY > 10);
+// }
 
-/// Call headerBgChanger in case page loads in the scrolled position
-// document.addEventListener("DOMContentLoaded", (event) => {
-//   console.log("DOM fully loaded and parsed");
-//   // HACK: Trigger header background change after a delay, once the content is loaded
-//   setTimeout(() => {
-//     headerBgChanger();
-//   }, 500);
-// });
 
 
 // * Page reload fix
@@ -45,6 +32,33 @@ document.body.addEventListener('click', (event) => {
   };
 });
 
+const swiperEl = document.querySelector(".swiper")
+if (swiperEl) {
+  const { Swiper } = await import('https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.mjs')
+  console.debug("Initializing Swiper", Swiper)
+  const swiper = new Swiper('.swiper', {
+    // Parameters
+    loop: true,
+
+    // Pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // autoplay
+    autoplay: {
+      delay: 3000,
+    },
+  });
+
+}
 
 
 // * Copy content to clipboard

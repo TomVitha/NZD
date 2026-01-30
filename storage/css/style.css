@@ -60,7 +60,8 @@ section section {
 
 header {
   --header-transition-duration: 200ms;
-  --header-transition: all var(--header-transition-duration) ease-in-out;
+  --header-transition: translate var(--header-transition-duration) ease-in-out;
+
   --header-logos-scale: 0.95;
   --header-padding-y: 0px;
   --header-padding-x: 15px;
