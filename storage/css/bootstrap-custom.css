@@ -186,6 +186,9 @@ a:where(:hover) {
   --bs-nav-link-hover-color: inherit;
 }
 
+.navbar :is(.nav-link:focus, .nav-link:hover) {
+  text-decoration: underline;
+}
 
 .blockquote {
   font-size: inherit;
